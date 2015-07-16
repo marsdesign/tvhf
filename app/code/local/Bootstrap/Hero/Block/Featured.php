@@ -10,11 +10,14 @@ class Bootstrap_Hero_Block_Featured extends Mage_Core_Block_Template{
    	public function getItems()
 	{
 
-		$_storeId = Mage::app()->getStore()->getStoreId();
+        // todo factor in store id
+        //$_storeId = Mage::app()->getStore()->getStoreId();
     	$hero = Mage::getModel('hero/hero')->getCollection()
-    			->addFieldToFilter('store_id', $_storeId)
+                ->addFieldToFilter('active', 1)
 				->setOrder('sort_order', 'ASC');
     	return $hero;
 	}
 
 }
+
+
