@@ -1,10 +1,10 @@
+<?php if($this->getItems()->getSize() > 1){ ?>
 <div class="std">
 	<div class="content video-list">
-	<?php foreach($this->getVideo() as $data): 
+	<?php foreach($this->getItems() as $data): 
 
 		$_video = $data->getData('video');
-		$_videoId = getYouTubeIdFromURL($video);
-		$_a_tag = '<a href="javascript:void(0);" class="video-link">';
+		$_videoId = $this->getYouTubeIdFromURL($_video);
 		$_image = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $data->getData('image');
 		$_title 	= $data->getData('title');
 		$_desc 		= $data->getData('description');
@@ -70,3 +70,5 @@ $j(document).ready(function(){
 
 });
 </script>
+
+<?php } ?>

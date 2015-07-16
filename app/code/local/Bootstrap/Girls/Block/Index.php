@@ -1,5 +1,5 @@
 <?php   
-class Bootstrap_Video_Block_Index extends Mage_Core_Block_Template{   
+class Bootstrap_Girls_Block_Index extends Mage_Core_Block_Template{   
 
     public function __construct() {
         parent::__construct();
@@ -11,18 +11,18 @@ class Bootstrap_Video_Block_Index extends Mage_Core_Block_Template{
 	{
       	$pathInfo = $this->getRequest()->getOriginalPathInfo();
         // Extract the requested key (whatever)
-        $pathArray = explode('/video/',$pathInfo);
+        $pathArray = explode('/girls/',$pathInfo);
 
         if(count($pathArray)>1){
        		$requestedKey = str_replace('/','',$pathArray[1]);
         }
         // todo factor in store id
         //$_storeId = Mage::app()->getStore()->getStoreId();
-    	$video = Mage::getModel('video/video')->getCollection()
+    	$girls = Mage::getModel('girls/girls')->getCollection()
                 ->addFieldToFilter('active', 1)
 				->setOrder('sort_order', 'ASC');
 
-    	return $video;
+    	return $girls;
 	}
 
 }
