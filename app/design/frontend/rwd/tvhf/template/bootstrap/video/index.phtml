@@ -23,7 +23,7 @@
 		        <?php if($i%2!=0){ ?>
 		        <div class="video">
 		            <div class="video-wrap">
-		            	<a href="#"><img src="<?php echo $_image;?>" alt="<?php echo $_title;?>"></a>
+		            	<a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_video;?>"><img src="<?php echo $_image;?>" alt="<?php echo $_title;?>"></a>
 		            </div>
 		        </div>
 		        <?php } ?>
@@ -31,13 +31,13 @@
 		            <div class="text-wrap">
 	                    <h3><?php echo $_title;?></h3>
 	                    <?php echo $_desc;?>
-	                    <a class="shop-now" href="#">watch now</a>
+	                    <a class="shop-now video-link" data-toggle="modal" data-target="#video-modal" data-video="">watch now</a>
 		            </div>
 		        </div>
 		        <?php if($i%2==0){ ?>
 		        <div class="video">
 		            <div class="video-wrap">
-		            	<a href="#"><img src="<?php echo $_image;?>" alt="<?php echo $_title;?>"></a>
+		            	<a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_video;?>"><img src="<?php echo $_image;?>" alt="<?php echo $_title;?>"></a>
 		            </div>
 		        </div>
 		        <?php } ?>
@@ -48,17 +48,16 @@
 </div>
 
 
-<?php
-// need modal here
-/*
-?>
-<div class="video-container">
-    <iframe frameborder="0" height="315" src="https://www.youtube.com/embed/<?php echo $_videoId;?>" width="560"></iframe>
-</div>
-<?php
-*/
-?>
-
+<div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-labelledby="video">
+<a href="#" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>            
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="yt-player">
+                <div class="embed-container"><iframe src="" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <?php 
 // need similar function for Vimeo
@@ -70,24 +69,25 @@ function getYouTubeIdFromURL($url)
 }
 ?>
 
+
 <script>
-// this is prob not needed
-// place bootstrap modal code here
-/*
-
-$j(document).ready(function(){
-
-	var max=0;
-	$j('.cols2').children().each(function(){
-	    if($j(this).height()>max) max = $(this).height();
-	});
-	$j('.cols2').children().each(function(){
-	    $j(this).height(max);
-	});
-
-});
-
-*/
+    // load youtube video
+    // toto rewrite for vimeo
+    // this autoplays when opened
+    // and stops when modal closed
+    autoPlayYouTubeModal();
+    function autoPlayYouTubeModal(){
+      var button = $(".video-link");
+      button.click(function() {
+        var modal = $(this).data( "target" ),
+        videoSrc = $(this).attr( "data-video" ), 
+        videoSrcAuto = videoSrc+"&amp;autoplay=1" ;
+        $j(modal+' iframe').attr('src', videoSrcAuto);
+        $j(modal+' .close').click(function () {
+            $j(modal+' iframe').attr('src', videoSrc);
+        });   
+      });
+    }
 </script>
 
 <?php } ?>

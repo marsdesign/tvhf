@@ -11062,8 +11062,6 @@ a.sort-by-switcher.sort-by-switcher i {
 
 
 /*  video ============================================ */
-
-
 .section .text-wrap h3 {
   margin:0 0 4px 0;
   font-size:13px;
@@ -11089,8 +11087,6 @@ a.sort-by-switcher.sort-by-switcher i {
 .video-index-index .page-title{
   padding:20px 0;
 }
-
-
 .video-list .section{
     background-color:#f2f2f2;
 }
@@ -11136,7 +11132,6 @@ a.sort-by-switcher.sort-by-switcher i {
     font-size:13px;
   }
 }
-
 .section:after{
   content:'';
   display:table;
@@ -11173,7 +11168,6 @@ a.sort-by-switcher.sort-by-switcher i {
     background:#f2f2f2;
     border:1px solid #f2f2f2
 }
-
 .section:nth-child(2) .text-wrap:after,
 .section:nth-child(2) .text-wrap:before {
     left:100%;
@@ -11185,7 +11179,6 @@ a.sort-by-switcher.sort-by-switcher i {
     position:absolute;
     pointer-events:none
 }
-
 .section:nth-child(2) .text-wrap:after {
     border-color:rgba(255,255,255,0);
     border-left-color:#f2f2f2;
@@ -11198,6 +11191,12 @@ a.sort-by-switcher.sort-by-switcher i {
     border-width:11px;
     margin-top:-11px
 }
+
+/* embed ================================ */
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } 
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 
 /* ============================================ *
