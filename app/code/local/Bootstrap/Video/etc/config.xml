@@ -11,7 +11,7 @@
         		<use>standard</use>
           		<args>
             		<module>Bootstrap_Video</module>
-            		<frontName>video</frontName>
+            		<frontName>tvhf-tube</frontName>
           		</args>
       		</video>
     	</routers>

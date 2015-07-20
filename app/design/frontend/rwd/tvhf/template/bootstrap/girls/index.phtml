@@ -1,3 +1,12 @@
+<?php
+/*
+
+carousel is invoked in app.js
+- css can be found styles.css - look for owl-theme
+
+*/
+?>
+
 <?php if($this->getItems()->getSize() > 1){ ?>
 	<div class="slideshow">
 		<?php foreach($this->getItems() as $data): 
@@ -18,13 +27,4 @@
 	<?php endforeach;?>
     </div>
 </div>
-
-<script>
-// use owl carousel here
-$j(document).ready(function(){
-
-
-
-});
-</script>
 <?php } ?>

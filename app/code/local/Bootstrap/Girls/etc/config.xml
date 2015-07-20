@@ -11,7 +11,7 @@
         		<use>standard</use>
           		<args>
             		<module>Bootstrap_Girls</module>
-            		<frontName>girls</frontName>
+            		<frontName>tvhf-dolls</frontName>
           		</args>
       		</girls>
     	</routers>
