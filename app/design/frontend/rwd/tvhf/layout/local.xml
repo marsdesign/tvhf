@@ -124,14 +124,12 @@
 
     <!-- Remove Account Navigation Links -->
     <customer_account>
-        <!--
         <reference name="customer_account_navigation">
             <action method="removeLinkByName"><name>OAuth Customer Tokens</name></action>
             <action method="removeLinkByName"><name>recurring_profiles</name></action>
             <action method="removeLinkByName"><name>billing_agreements</name></action>
             <action method="removeLinkByName"><name>downloadable_products</name></action>
         </reference>
-    -->
         <reference name="left"> 
             <action method="unsetChild"><name>cart_sidebar</name></action> 
         </reference> 
