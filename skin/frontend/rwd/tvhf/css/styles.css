@@ -10389,7 +10389,8 @@ a:focus {
 .sub-menu{
   display:none;
 }
-.catalog-category-view .sub-menu{
+.catalog-category-view .sub-menu,
+.cms-shop .sub-menu{
   display:block;
 }
 .sub-menu:before,
