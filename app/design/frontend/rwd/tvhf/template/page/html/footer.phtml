@@ -27,11 +27,11 @@
 <div class="footer">
 	<div class="footer-top">
 		<div class="container">
-			<div>
-				<div class="newsletter">
+			<div class="footer-logo">
+				<div class="footer-newsletter">
 					<?php echo $this->getChildHtml() ?>
 				</div>
-				<div class="social">
+				<div class="footer-social">
 					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social')->toHtml(); ?>
 				</div>
 			</div>
@@ -39,9 +39,17 @@
 	</div>
 	<div class="footer-bottom">
 		<div class="container">
-		    <div class="footer-copyright">
-		        <?php echo date('Y');?> <?php echo $this->getCopyright() ?>
-		         <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml(); ?>
+		    <div class="footer-copyright hidden-small">
+		        &copy; <?php echo date('Y');?> <?php echo $this->getCopyright() ?>
+		    </div>
+		    <div class="footer-links">
+		        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml(); ?>
+		    </div>
+		    <div class="footer-phone">
+		    	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_phone')->toHtml(); ?>
+		   	</div>
+		    <div class="footer-copyright hidden-large">
+		        &copy; <?php echo date('Y');?> <?php echo $this->getCopyright() ?>
 		    </div>
 		    <div class="footer-credits">
 		    	site by: <a href="http://marsdesign.com" target="_blank">marsdesign</a>

@@ -68,8 +68,6 @@
                 <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/minicart.js</name></action>
-
-
                 <!-- Typekit -->
                 <block type="core/text" name="head.typekit.js">
                     <action method="setText"><text><![CDATA[<script src="//use.typekit.net/rgf0lxw.js"></script>]]>&#10;</text></action>
@@ -116,8 +114,9 @@
                     <action method="setElementClass"><value>top-container</value></action>
                 </block>
             </block>
-
+<!-- mmc remove
             <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
+-->
 
             <block type="core/text_list" name="left_first" as="left_first" translate="label">
                 <label>Left Column First (shows above main column on smaller screens)</label>

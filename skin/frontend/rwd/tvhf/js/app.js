@@ -998,7 +998,7 @@ treat account and cart links different that the mobile skip-links skip link
         slideSpeed: 1000,
         lazyLoad: true
     });
-    $j(".hero").owlCarousel({
+    $j(".slideshow").owlCarousel({
         singleItem: true,
         slideSpeed:300,
         autoPlay: 5000,

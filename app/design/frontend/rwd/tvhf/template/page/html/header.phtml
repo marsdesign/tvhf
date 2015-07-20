@@ -66,7 +66,16 @@
 
         <!-- Navigation -->
         <div id="header-nav" class="skip-content">
-            <?php echo $this->getChildHtml('topMenu') ?>
+        <?php
+            // mmc drop custom block here
+            $_menuActive = Mage::getModel('cms/block')->load('main_menu')->getIsActive();
+            ?>
+            <?php $_menu = $this->getHtml('level-top') ?>
+            <?php if($_menuActive): ?>
+                <nav id="nav">
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('main_menu')->toHtml();?>
+                </nav>
+            <?php endif ?>            
         </div>
 
         <!-- Search -->
@@ -80,7 +89,8 @@
         </div>
 
         <?php echo $this->getChildHtml('store_switcher'); ?>
-
     </div>
+    <?php echo $this->getChildHtml('topMenu') ?>
 </header>
+<div class="scroll-down"></div>
 <?php echo $this->getChildHtml('topContainer'); ?>

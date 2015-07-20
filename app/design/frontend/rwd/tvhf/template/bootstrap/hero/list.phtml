@@ -1,0 +1,31 @@
+
+<?php if($this->getItems()->getSize()){ ?>
+
+    <?php foreach($this->getItems() as $_item): 
+
+        $img        = $_item->getImage();
+        $img_src    = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $img;
+
+        $img_mobile        = $_item->getMobileImage();
+        $img_mobile_src    = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $img_mobile;
+        
+        $link       = $_item->getLink();
+    ?>
+
+    <div class="section-home">
+        <img class="section-background" src="<?php echo $img_src;?>">
+        <div class="text-wrap">
+            <div class="inner-text">
+                <h3><?php echo $_item->getTitle();?></h3>
+                <?php echo $_item->getDescription();?>
+                <?php if(!empty($link)){ ?><a href="<?php echo $link;?>" class="shop-now"><?php }?>shop now <i class="fa fa-angle-right"></i><?php if(!empty($link)){ ?></a><?php }?>
+            </div>
+        </div>
+    </div>
+
+    <?php endforeach;?>
+
+<?php } ?>
+
+
+

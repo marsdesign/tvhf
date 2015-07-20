@@ -31,19 +31,18 @@
  * @see Mage_Page_Block_Html_Topmenu
  */
 
-
- $menuActive = Mage::getModel('cms/block')->load('main_menu')->getIsActive();
+// getting main_menu block and also shop navigation
+$_shopMenuActive = Mage::getModel('cms/block')->load('shop_menu')->getIsActive();
+$_menu = $this->getHtml('level-top');
 ?>
-<?php $_menu = $this->getHtml('level-top') ?>
-
-<?php if($menuActive): ?>
-    <nav id="nav">
- 	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('main_menu')->toHtml();?>
-    </nav>
+<?php if($_shopMenuActive): ?>
+    <div class="sub-menu">
+    	<?php //echo $_menu ?>
+    	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('shop_menu')->toHtml();?>
+    </div>
 <?php else: ?>
-    <nav id="nav">
-        <ol class="nav-primary">
-            <?php echo $_menu ?>
-        </ol>
-    </nav>
+    <div class="sub-menu">
+    	<?php echo $_menu ?>
+    </div>
 <?php endif ?>
+
