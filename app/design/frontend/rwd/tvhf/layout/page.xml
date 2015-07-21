@@ -75,8 +75,6 @@
                 <block type="core/text" name="head.typekit.load">
                     <action method="setText"><text><![CDATA[<script>try{Typekit.load();}catch(e){}</script>]]>&#10;</text></action>
                 </block>
-
-
                 <action method="addLinkRel"><rel>stylesheet</rel><href>//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css</href></action>
 
                 <action method="addItem"><type>skin_css</type><name>js/lib/bootstrap/bootstrap.min.css</name><params/></action>

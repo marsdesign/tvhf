@@ -47,6 +47,21 @@
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
+
+        <div class="home-header">
+        <?php
+            // mmc drop custom block here
+            $_menuActive = Mage::getModel('cms/block')->load('main_menu')->getIsActive();
+            ?>
+            <?php if($_menuActive): ?>
+                <nav>
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('main_menu')->toHtml();?>
+                </nav>
+            <?php endif ?> 
+            <div class="scroll-down"></div>           
+        </div>
+
+        
         <div class="full-width">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>

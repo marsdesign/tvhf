@@ -3064,7 +3064,6 @@ body {
   min-width: 320px;
   min-height: 100%;
   margin: 0 auto;
-  background: #FFFFFF;
 }
 
 .wrapper:after {
@@ -3073,9 +3072,10 @@ body {
   clear: both;
 }
 
+/* home page to scroll over the background */
 .cms-index-index .wrapper{
   position:relative;
-  z-index:2;
+  z-index:5;
 }
 
 /* ============================================ *
@@ -3173,15 +3173,38 @@ body {
 /* ============================================ *
  * Header
  * ============================================ */
+.fixed-header-spacer{
+  display:none;
+}
 @media only screen and (min-width: 771px) {
   .page-header {
-    /* max-width: 1260px; */
     margin: 0 auto;
-    /* padding: 0 30px; */
     text-align:center;
-  
     border-bottom: solid 1px #dbdbdb;
-    /* background: #F4F4EB; */
+    background-color:rgba(255,255,255,0.9);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    z-index:6;
+    opacity:1;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  .fixed-header-spacer{
+    clear:both;
+    height:90px;
+    display:block;
+  }
+  .catalog-category-view .fixed-header-spacer,
+  .cms-shop .fixed-header-spacer{
+    height:130px;
+  }
+  .cms-index-index .fixed-header-spacer{
+    display:none;
   }
   .page-header-container {
     position: relative;
@@ -3191,9 +3214,9 @@ body {
     /* text-align: center; */
   }
 }
-  .page-header-container {
-    position: relative;
-  }
+.page-header-container {
+  position: relative;
+}
 
 /* ============================================ *
  * Language switcher + welcome message
@@ -3261,11 +3284,12 @@ body {
   width:100px;
   padding-top:5px;
   padding-bottom:5px;
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  margin-left:30px;
 }
 .logo img {
   max-width: 100%;
@@ -3273,12 +3297,10 @@ body {
 }
 .logo .small {
   display: block;
-  margin-left:30px;
 }
 .logo .large {
   display: none;
 }
-
 .logo:hover {
   opacity: 0.8;
 }
@@ -3286,8 +3308,12 @@ body {
 @media only screen and (min-width: 771px) {
   .logo {
     width:160px;
-  padding-top:10px;
-  padding-bottom:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-left:0;
+  }
+  .cms-index-index .logo.logo-small{
+    width:160px;
   }
   .logo .small {
     display: none;
@@ -3295,6 +3321,10 @@ body {
   .logo .large {
     display: block;
   }
+  .logo-small{
+    width:100px;
+  }
+
 }
 /* ============================================ *
  * Skip Links
@@ -10355,6 +10385,7 @@ a:focus {
   padding:5px 25px;
 }
 @media(min-width:771px){
+
   #header-nav{
       position:absolute;
       top:50%;
@@ -10472,14 +10503,38 @@ a:focus {
 .hero-logo,
 .hero-background,
 .hero-space,
-.scroll-down{
+.scroll-down,
+.home-header{
   display:none;
 }
- @media(min-width:991px){
+ @media(min-width:771px){
 
+  .home-header{
+    display:block;
+    height:76px;
+    text-align:center;
+    opacity:1;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  .home-header nav{
+    height:46px;
+    line-height:46px;
+    background-color: rgba(255,255,255,0.8);
+  }
+  .scroll-down {
+      height:30px;
+      text-align:center;
+      vertical-align:middle;
+      width:100%;
+      background: #fff url('../images/scroll-arrow.png') 50% 50% no-repeat;
+  }
   .hero-logo,
   .hero-background,
-  .hero-space{
+  .hero-space,
+  .scroll-down{
     display:block;
   }
   .hero-background {
@@ -10506,7 +10561,7 @@ a:focus {
     width: 266px;
     height:116px;
     top: 50px;
-    left: 100px;
+    left: 5%;
     -moz-transition: all 500ms ease-in-out;
     -ms-transition: all 500ms ease-in-out;
     -o-transition: all 500ms ease-in-out;
@@ -10516,36 +10571,22 @@ a:focus {
   .fade{
     opacity:0;
   }
-  .cms-index-index #header{
-    background-color:rgba(255,255,255,0.9);
-    height:90px;
-    border:none;
+  .cms-index-index .page-header{
+    -webkit-transform: translate3d(0,-100%,0);
+    -moz-transform: translate3d(0,-100%,0);
+    -ms-transform: translate3d(0,-100%,0);    
   }
-  #header.stuck.disappear{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    width:100%;
-    z-index:6;
-    opacity:1;
-    height:90px;
+  .cms-index-index .page-header.slide-down{
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);    
   }
-  #header.disappear{
-    -moz-transition: all 500ms ease-in-out;
-    -ms-transition: all 500ms ease-in-out;
-    -o-transition: all 500ms ease-in-out;
-    transition: all 500ms ease-in-out;
-    height:0;
-    overflow:hidden;
+  .slide-down{
+    -webkit-transform: translate3d(0,100%,0);
+    -moz-transform: translate3d(0,100%,0);
+    -ms-transform: translate3d(0,100%,0);     
   }
-  .scroll-down {
-      height:40px;
-      text-align:center;
-      vertical-align:middle;
-      width:100%;
-      background: url('../images/scroll-arrow.png') 50% 50% no-repeat;
-  }
+
 }
 
 
@@ -11056,8 +11097,19 @@ a.sort-by-switcher.sort-by-switcher i {
 }
 
  /*  product ============================================ */
-
-
+.catalog-product-view .main-container{
+  padding-left:0;
+  padding-right:0;
+  max-width: none;
+}
+.product-essential{
+  max-width:1260px;
+  padding-left:30px;
+  padding-right:30px;
+}
+.product-description{
+  border-top:solid 1px #ccc;
+}
 
 
 
@@ -11615,13 +11667,12 @@ ul.row  > li,
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  background: #fff;
-  border:solid 3px #92ae25;
+  background: #ccc;
 }
 
 .owl-theme .owl-controls .owl-page.active span,
 .owl-theme .owl-controls.clickable .owl-page:hover span{
-  background:#a82841;
+  background:#000;
 }
 
 .owl-pagination{
@@ -11650,6 +11701,9 @@ ul.row  > li,
 
 
 /* modal */
+.modal-backdrop{
+  background: rgba(255,255,255,0.6);
+}
 .modal .close{
   position:absolute;
   top:0;

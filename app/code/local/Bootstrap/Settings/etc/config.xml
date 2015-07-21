@@ -29,11 +29,11 @@
     <global>
         <page>
             <layouts>
-                <one_column_fullscreen module="page" translate="label">
-                    <label>Full Width Content</label>
-                    <template>page/1column-full.phtml</template>
-                    <layout_handle>page_one_column_full</layout_handle>
-                </one_column_fullscreen>
+                <one_column_home module="page" translate="label">
+                    <label>Home Template</label>
+                    <template>page/1column-home.phtml</template>
+                    <layout_handle>page_one_column_home</layout_handle>
+                </one_column_home>
                 <one_column_withimage module="page" translate="label">
                     <label>1 Column with Image</label>
                     <template>page/1column-withimage.phtml</template>
