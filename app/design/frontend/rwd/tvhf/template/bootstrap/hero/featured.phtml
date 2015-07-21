@@ -15,36 +15,36 @@
 <?php } ?>
 
 
-<div class="hero-logo"></div>     
+<div class="hero-logo" id="hero-logo"></div>     
 <div class="hero-background" style="background-image:url('<?php echo $img_src;?>');"></div> 
 <div class="hero-space"></div>
 
-<div id="element-waypoint">test</div>
-
 <script type="text/javascript">
-
-
 $j(document).ready(function(){
-
-
-
-
-    var waypoints = $j('#header').waypoint(function(direction) {
-      $j( ".hero-logo" ).toggleClass('fade');
-      $j( "#header" ).toggleClass('disappear');
+    var waypoints = $j('.home-header').waypoint(function(direction) {
+                    
     }, {
       offset: '400'
     })
-
-    var sticky = new Waypoint.Sticky({
-      element: $j('#header')[0]
+    var waypoints = $j('.home-header').waypoint(function(direction) {
+      $j( ".home-header" ).toggleClass('slide-down');
+    }, {
+      offset: '200'
+    })
+    var waypoints = $j('.home-header').waypoint(function(direction) {
+      $j( "header" ).toggleClass('slide-down');
+    }, {
+      offset: '-60'
     })
 
-
-
-
+        $j(window).scrollAnimate({
+            '#hero-logo': {
+                opacity: {
+                    start: '1.0',
+                    end: '0.0'
+                }
+            }
+        });
+    
 })
-
-
-
 </script>

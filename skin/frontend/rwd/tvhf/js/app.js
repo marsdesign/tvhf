@@ -982,7 +982,7 @@ treat account and cart links different that the mobile skip-links skip link
 
 
     // ==============================================
-    // UI Pattern - Owl Carousel mmc bling
+    // UI Pattern - Owl Carousel mmc 
     // ==============================================
     $j(".carousel").owlCarousel({
         pagination: false,
@@ -1007,6 +1007,25 @@ treat account and cart links different that the mobile skip-links skip link
         //transitionStyle: "fade"
         lazyLoad: true
     });
+
+    // ==============================================
+    // alter header on scroll
+    // ==============================================
+
+    $j(function() {
+        //caches a jQuery object containing the header element
+        var logo = $j(".logo");
+        $j(window).scroll(function() {
+            var scroll = $j(window).scrollTop();
+            if (scroll >= 200) {
+                logo.addClass("logo-small");
+            } else {
+                logo.removeClass("logo-small");
+            }
+        });
+    });
+
+
 
     // ==============================================
     // Layered Navigation Block

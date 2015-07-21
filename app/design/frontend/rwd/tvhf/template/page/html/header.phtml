@@ -27,7 +27,6 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-
 <header id="header" class="page-header">
     <div class="page-header-container">
         <a class="logo" href="<?php echo $this->getUrl('') ?>">
@@ -70,7 +69,6 @@
             // mmc drop custom block here
             $_menuActive = Mage::getModel('cms/block')->load('main_menu')->getIsActive();
             ?>
-            <?php $_menu = $this->getHtml('level-top') ?>
             <?php if($_menuActive): ?>
                 <nav id="nav">
                     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('main_menu')->toHtml();?>
@@ -92,5 +90,5 @@
     </div>
     <?php echo $this->getChildHtml('topMenu') ?>
 </header>
-<div class="scroll-down"></div>
+<div class="fixed-header-spacer"></div>
 <?php echo $this->getChildHtml('topContainer'); ?>

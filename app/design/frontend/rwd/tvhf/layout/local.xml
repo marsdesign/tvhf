@@ -73,7 +73,7 @@
             </action>
             -->
         </reference>
-		<reference name="before_body_end">
+		<reference name="after_body_start">
             <block type="core/template" name="modal_subscribe" template="modal/subscribe.phtml" after="-"></block>
             <!-- <block type="core/template" name="modal_login" template="modal/login.phtml" after="-"></block> -->
         </reference>    
@@ -143,10 +143,11 @@
             <reference name="head">
                 <action method="addItem"><type>skin_js</type><name>js/lib/jquery.waypoints.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/sticky.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/lib/jquery-scroll-animator-1.0.js</name></action>
             </reference>
           </reference>
         <reference name="content">
-        </reference>      
+        </reference>        
     </cms_index_index>
 
 

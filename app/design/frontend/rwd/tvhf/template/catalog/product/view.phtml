@@ -33,6 +33,30 @@
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
+
+<?php 
+// get custom attributes
+$_video         = $_product->getVideo(); // vimeo video url
+
+
+// user can set sizing pop to yes/no
+$_showSizing    = $_product->getShowSizing();
+// use this to output the sizing chart into a modal
+// the link to the modal should be placed next to quantity box
+// use the custom attribute to show only if checked
+?>
+<div class="modal fade" id="modal-sizing">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <div class="modal-body">
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pdp_sizing')->toHtml() ?>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
@@ -99,19 +123,18 @@
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
                         <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
                     </div>
                 <?php endif; ?>
             </div>
 
             <?php echo $this->getChildHtml('related_products') ?>
 
+<?php /* mmc remove tabs
             <div class="product-collateral toggle-content tabs">
             <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
                 <dl id="collateral-tabs" class="collateral-tabs">
@@ -124,7 +147,7 @@
                 </dl>
             <?php endif; ?>
             </div>
-
+*/?>
             <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                 <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
@@ -182,8 +205,42 @@
         //]]>
         </script>
     </div>
+    <div class="product-description">
+        <div class="container">
+            <div class="description">
+                <div class="std">
+                    <?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?>
+                </div>
+            </div>
+            <div class="video">
+<?php
+$_videoThumb    = $_product->getVideoThumbnail(); // video thumbnail
 
+$_videoThumb    = str_replace("no_selection", "", $_videoThumb);
+$supported_image = array(
+    'gif',
+    'jpg',
+    'jpeg',
+    'png'
+);
+$ext = strtolower(pathinfo($_videoThumb, PATHINFO_EXTENSION)); 
+if (in_array($ext, $supported_image)) {
+    try{
+        $_videoImg= $this->helper('catalog/image')->init($_product, 'video_thumbnail')
+        ->constrainOnly(true)
+        ->keepAspectRatio(true)
+        ->keepFrame(false)
+        ->resize(400, null);
+    }catch(Exception $e){
+        $_videoImg = '';
+    }
+}
+?>
+                <img src="<?php echo $_videoImg;?>" alt="Video">
+            </div>
+        </div>
+    </div>
     <?php echo $this->getChildHtml('upsell_products') ?>
-    <?php echo $this->getChildHtml('product_additional_data') ?>
-
+    <?php //echo $this->getChildHtml('product_additional_data') ?>
+    <?php // echo $this->getChildHtml('reviews') ?>
 </div>
