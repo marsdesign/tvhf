@@ -143,7 +143,9 @@
             <reference name="head">
                 <action method="addItem"><type>skin_js</type><name>js/lib/jquery.waypoints.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/sticky.min.js</name></action>
-                <action method="addItem"><type>skin_js</type><name>js/lib/jquery-scroll-animator-1.0.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/lib/jquery.mousewheel.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/lib/jquery.transit.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/lib/jquery.scrollAnimator.js</name></action>
             </reference>
           </reference>
         <reference name="content">

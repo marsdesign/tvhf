@@ -65,6 +65,8 @@
                 <action method="addItem"><type>skin_js</type><name>js/lib/bootstrap/bootstrap.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/owl.carousel/owl.carousel.min.js</name></action>
 
+
+
                 <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/minicart.js</name></action>
