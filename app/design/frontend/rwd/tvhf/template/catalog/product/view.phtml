@@ -37,11 +37,15 @@
 <?php 
 // get custom attributes
 $_video         = $_product->getVideo(); // vimeo video url
+$parts      = parse_url($_video);
+$path       = explode("/",$parts["path"]);
+$_videoId   = array_pop($path);
 // user can set sizing pop to yes/no
 $_showSizing    = $_product->getShowSizing();
 // use this to output the sizing chart into a modal
 // the link to the modal should be placed next to quantity box
 // use the custom attribute to show only if checked
+
 ?>
 <div class="modal fade" id="modal-sizing">
   <div class="modal-dialog">
@@ -203,15 +207,8 @@ $_showSizing    = $_product->getShowSizing();
         //]]>
         </script>
     </div>
-    <div class="product-description">
-        <div class="container">
-            <div class="description">
-                <div class="std">
-                    <?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?>
-                </div>
-            </div>
-            <div class="video">
 <?php
+// get video image - after media.phtml
 $_videoThumb    = $_product->getVideoThumbnail(); // video thumbnail
 
 $_videoThumb    = str_replace("no_selection", "", $_videoThumb);
@@ -234,11 +231,61 @@ if (in_array($ext, $supported_image)) {
     }
 }
 ?>
-                <img src="<?php echo $_videoImg;?>" alt="Video">
+    <div class="product-description">
+        <div class="container">
+            <div class="description">
+                <div class="std">
+                    <h3>Description</h3>
+                    <?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?>
+                </div>
             </div>
+            <?php if(!empty($_videoId)){ ?>
+            <div class="video-container">
+                <div class="product-video">
+                    <a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">
+                        <div class="video-play"></div>
+                    </a>
+                    <img src="<?php echo $_videoImg;?>" alt="<?php echo $_title;?>">
+                </div>
+            </div>
+            <?php } ?>
         </div>
     </div>
     <?php echo $this->getChildHtml('upsell_products') ?>
     <?php //echo $this->getChildHtml('product_additional_data') ?>
     <?php // echo $this->getChildHtml('reviews') ?>
 </div>
+
+
+
+
+<div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-labelledby="video">        
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="video-player">
+                <div class="embed-container"><iframe src="" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+            </div>
+        </div>
+        <a href="#" class="close button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></a>
+    </div>
+</div>
+
+<script>
+// <![CDATA[
+
+    // set iframe url on click
+    $j('.video-link').on('click', function(){
+        var url     = 'https://player.vimeo.com/video/',
+        modal       = $j(this).data("target"),
+        videoId     = $j(this).data("video"),
+        videoSrc    = url+videoId, 
+        videoUrl    = videoSrc+"?autoplay=1&amp;color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0";
+        $j(modal+' iframe').attr('src', videoUrl); 
+    })
+    // unset url on close
+    $j('#video-modal').on('hide.bs.modal', function (e) {
+        $j('#video-modal').find('iframe').attr('src', '');
+    })
+
+// ]]>
+</script>
