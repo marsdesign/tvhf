@@ -1,0 +1,35 @@
+<?php $_helper = Mage::helper('catalog/category');?>
+<?php $_categories = $_helper->getStoreCategories(false, true, false);?>
+<?php $_categories->addAttributeToSelect('image');?>
+<?php $_categories->addAttributeToSelect('description');?>
+<?php if (count($_categories) > 0): ?>
+    <div class="shop-home">
+        <?php foreach($_categories as $_category): ?>
+            <div class="section-shop">
+            	<div class="shop-image">
+				<?php
+				    $_imgHtml   = '';
+				    if ($_imgUrl = $_category->getImageUrl()) {
+				        $_imgHtml = '<img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" />';
+				    }
+				    echo $_imgHtml;
+				?>
+				</div>
+				<div class="text-wrap">
+					<div class="caption-wrap">
+						<div class="caption">
+		                	<h3><a href="<?php echo $_helper->getCategoryUrl($_category) ?>"><?php echo $_category->getName() ?></a></h3>
+		                	<?php echo $_category->getDescription() ?><br />
+		                	<a href="<?php echo $_helper->getCategoryUrl($_category) ?>" class="more">Shop Now <i class="fa fa-angle-right"></i></a>
+		                </div>
+                	</div>
+            	</div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
+
+<style>
+
+</style>
