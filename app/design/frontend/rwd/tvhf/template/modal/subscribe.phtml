@@ -90,13 +90,13 @@
        			},2000);
        }
 
-   // var sub = readCookie('subscribePop');
-	//if(!sub){
-	//	jQuery(document).ready(function() {
-       		//setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
-			//createCookie('subscribePop',1,3);
-	//	});
-	//}
+     // var sub = readCookie('subscribePop');
+  	//if(!sub){
+  	//	jQuery(document).ready(function() {
+         		//setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
+  			//createCookie('subscribePop',1,3);
+  	//	});
+  	//}
 
     function createCookie(name,value,days) {
       if (days) {
@@ -120,26 +120,25 @@
     }
     
     if (window.location.protocol != "https:"){
-    if (Modernizr.localstorage) {
-    	// use local storage to show pop up only once
-  		if (localStorage.getItem("subpop") === null) {
-  			setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
-  			localStorage.setItem('subpop', 1);
-  		}
-	} else {
-		// javascript fallback - not in use.
-   		//var sub = readCookie('subscribePop');
-		//if(!sub){
-		//	jQuery(document).ready(function() {
-       	//		setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
-		//		createCookie('subscribePop',1,3);
-		//	});
-		//}
+      if (Modernizr.localstorage) {
+      	// use local storage to show pop up only once
+    		if (localStorage.getItem("subpop") === null) {
+    			setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
+    			localStorage.setItem('subpop', 1);
+    		}
+	   } else {
+    		// javascript fallback - not in use.
+       		//var sub = readCookie('subscribePop');
+    		//if(!sub){
+    		//	jQuery(document).ready(function() {
+           	//		setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
+    		//		createCookie('subscribePop',1,3);
+    		//	});
+    		//}
+	   }
 	}
-	}
-
   // show modal no matter
-  setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
+  // setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
        
 //]]>
 </script>

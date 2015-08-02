@@ -10,84 +10,69 @@
 	$i = 0;
 	foreach($this->getItems() as $data): 
 		$i++;
-		$_video = $data->getData('video');
-		$_videoId = $this->getYouTubeIdFromURL($_video);
-		$_image = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $data->getData('image');
+
+		$_video 	= $data->getData('video');
+		$parts 		= parse_url($_video);
+		$path 		= explode("/",$parts["path"]);
+		$_videoId 	= array_pop($path);
+		$_image 	= Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $data->getData('image');
 		$_title 	= $data->getData('title');
 		$_desc 		= $data->getData('description');
 		// optional can use to resize video thumbnail
 		$_thumbnail = $this->helper('video/data')->resizeImg($data->getData('thumbnail'),300,360);
 	?>
-		<div class="section">
+		<div class="section-video">
 			<div class="video-wrap">
-		        <?php if($i%2!=0){ ?>
 		        <div class="video">
-		            <div class="video-wrap">
-		            	<a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_video;?>"><img src="<?php echo $_image;?>" alt="<?php echo $_title;?>"></a>
-		            </div>
+	            	<a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">
+						<div class="video-play"></div>
+	            	</a>
+	            	<img src="<?php echo $_image;?>" alt="<?php echo $_title;?>">
 		        </div>
-		        <?php } ?>
-				<div class="video-caption">
-		            <div class="text-wrap">
+		        <div class="text-wrap">
+					<div class="video-caption">
+			        	<div class="video-center">
 	                    <h3><?php echo $_title;?></h3>
 	                    <?php echo $_desc;?>
-	                    <a class="shop-now video-link" data-toggle="modal" data-target="#video-modal" data-video="">watch now</a>
-		            </div>
-		        </div>
-		        <?php if($i%2==0){ ?>
-		        <div class="video">
-		            <div class="video-wrap">
-		            	<a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_video;?>"><img src="<?php echo $_image;?>" alt="<?php echo $_title;?>"></a>
-		            </div>
-		        </div>
-		        <?php } ?>
+	                    <a class="button-hollow video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">watch now</a>
+	                	</div>
+                	</div>
+                </div>
 	    	</div>
 		</div>
 	<?php endforeach;?>
     </div>
 </div>
 
-
-<div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-labelledby="video">
-<a href="#" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>            
+<div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-labelledby="video">        
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body" id="yt-player">
-                <div class="embed-container"><iframe src="" frameborder="0" allowfullscreen></iframe></div>
+            <div class="modal-body" id="video-player">
+                <div class="embed-container"><iframe src="" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<?php 
-// need similar function for Vimeo
-function getYouTubeIdFromURL($url) 
-{
-  $pattern = '%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i';
-  preg_match($pattern, $url, $matches);
-  return isset($matches[1]) ? $matches[1] : false;
-}
-?>
-
+        </div>
+        <a href="#" class="close button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></a>
+    </div>
+</div>
 
 <script>
-    // load youtube video
-    // toto rewrite for vimeo
-    // this autoplays when opened
-    // and stops when modal closed
-    autoPlayYouTubeModal();
-    function autoPlayYouTubeModal(){
-      var button = $(".video-link");
-      button.click(function() {
-        var modal = $(this).data( "target" ),
-        videoSrc = $(this).attr( "data-video" ), 
-        videoSrcAuto = videoSrc+"&amp;autoplay=1" ;
-        $j(modal+' iframe').attr('src', videoSrcAuto);
-        $j(modal+' .close').click(function () {
-            $j(modal+' iframe').attr('src', videoSrc);
-        });   
-      });
-    }
+// <![CDATA[
+
+	// set iframe url on click
+	$j('.video-link').on('click', function(){
+	    var url 	= 'https://player.vimeo.com/video/',
+	    modal 		= $j(this).data("target"),
+	    videoId 	= $j(this).data("video"),
+	    videoSrc 	= url+videoId, 
+	    videoUrl 	= videoSrc+"?autoplay=1&amp;color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0";
+	    $j(modal+' iframe').attr('src', videoUrl); 
+	})
+	// unset url on close
+	$j('#video-modal').on('hide.bs.modal', function (e) {
+	    $j('#video-modal').find('iframe').attr('src', '');
+	})
+
+// ]]>
 </script>
 
 <?php } ?>

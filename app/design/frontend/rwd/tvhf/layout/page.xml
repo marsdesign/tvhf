@@ -65,6 +65,8 @@
                 <action method="addItem"><type>skin_js</type><name>js/lib/bootstrap/bootstrap.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/owl.carousel/owl.carousel.min.js</name></action>
 
+
+
                 <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/minicart.js</name></action>
@@ -84,6 +86,14 @@
 
                 <!-- Add stylesheets with media queries for use by modern browsers -->
                 <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+
+
+
+                <action method="addItem"><type>skin_css</type><name>css/styles-nap.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
+
+
+
+
 
                 <!-- Sets viewport meta tag using text block -->
                 <block type="core/text" name="head.viewport">

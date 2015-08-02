@@ -19,7 +19,10 @@
 <div class="hero-background" style="background-image:url('<?php echo $img_src;?>');"></div> 
 <div class="hero-space"></div>
 
+
 <script type="text/javascript">
+
+/*
 $j(document).ready(function(){
     var waypoints = $j('.home-header').waypoint(function(direction) {
                     
@@ -36,15 +39,80 @@ $j(document).ready(function(){
     }, {
       offset: '-60'
     })
-
-        $j(window).scrollAnimate({
-            '#hero-logo': {
-                opacity: {
-                    start: '1.0',
-                    end: '0.0'
-                }
-            }
-        });
     
 })
+*/
+
+
+
+
+
+
+
+
+
+
+
+var Example = (function(){
+    
+    var settings = {};
+    var defaults = {
+        maxScroll : 900,
+        speed : 5,
+        elementScroll : '.page'
+    }
+    
+    // OBJECT OF ANIMATION AND TRANSITIONS RULES
+    // MUST BE THIS FORMAT:
+    // {
+    //    element : 'TRANSITION ELEMENT',
+    //    startAt : (INIT OF SCROLL TOP INDEX),
+    //    endAt : (END OF SCROLL TOP INDEX),
+    //    properties : {    ARRAY OF PROPERTIES
+    //        property : {  //THIS IS PROPERTY (EX. x, y, opacity, scale, ETC). MUST BE COMPATIBLE WITH Transit (http://ricostacruz.com/jquery.transit/) SUPORTED PROPERTIES.
+    //            start : (START VALUE OF PROPERTY),
+    //            end : (END VALUE OF PROPERTY)
+    //        }
+    //    }
+    // }
+    var largura = -window.innerWidth;
+    var altura = window.innerHeight;
+    var animations = [
+        
+        {
+            element : '#hero-logo',
+            startAt : 20,
+            endAt : 30,
+            properties : {
+                opacity : { start : 1, end : -1 }
+            }
+        },
+        
+    ];
+    
+    var init = function( param ){
+        
+        settings = $j.extend( defaults, param );
+        
+        ScrollAnimator = ScrollAnimator();
+        ScrollAnimator.init({
+            
+            anim : animations,
+            maxScroll : defaults.maxScroll,
+            speed : defaults.speed,
+            elementScroll : defaults.elementScroll
+            
+        });
+        
+    }
+    
+    return {
+        init : init
+    };
+    
+})();
+
+$j(document).ready(function(){
+    Example.init();
+});
 </script>
