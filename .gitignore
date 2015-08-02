@@ -125,7 +125,6 @@ skin/frontend/enterprise
 skin/frontend/rwd/default/
 skin/install/
 var/
-blog/
 dbadmin/
 skin/frontend/rwd/default/
 skin/frontend/tvhf/default/scss/.sass-cache/
@@ -134,7 +133,9 @@ skin/frontend/tvhf/default/scss/.sass-cache/
 .htaccess.sample
 api.php
 index.html
-
+_notes
+_notes/
+.gitignore
 # OS generated files #
 ######################
 .DS_Store
