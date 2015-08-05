@@ -993,7 +993,7 @@ treat account and cart links different that the mobile skip-links skip link
         itemsTablet: [768,2],
         itemsTabletSmall: [600,2],
         itemsMobile : [479,1],
-        navigationText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+        navigationText : ["",""],
         scrollPerPage: true,
         slideSpeed: 1000,
         lazyLoad: true
