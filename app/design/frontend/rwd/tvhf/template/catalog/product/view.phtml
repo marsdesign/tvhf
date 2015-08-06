@@ -36,29 +36,21 @@
 
 <?php 
 // get custom attributes
-$_video         = $_product->getVideo(); // vimeo video url
-$parts      = parse_url($_video);
-$path       = explode("/",$parts["path"]);
-$_videoId   = array_pop($path);
-// user can set sizing pop to yes/no
-$_showSizing    = $_product->getShowSizing();
+$_video     = $_product->getVideo(); // vimeo video url
+$_videoId   = getVideoId($_video);
+
+// function is also used by code in addtocart.phtml
+function getVideoId($v){
+    $v          = strip_tags($v);
+    $parts      = parse_url($v);
+    $path       = explode("/",$parts["path"]);
+    $videoId   = array_pop($path); 
+    return $videoId;  
+}
 // use this to output the sizing chart into a modal
 // the link to the modal should be placed next to quantity box
 // use the custom attribute to show only if checked
-
 ?>
-<div class="modal fade" id="modal-sizing">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <div class="modal-body">
-        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pdp_sizing')->toHtml() ?>
-      </div><!-- /.modal-body -->
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
@@ -109,7 +101,6 @@ $_showSizing    = $_product->getShowSizing();
                     </div>
                 <?php endif;
                 */?>
-
             </div>
 
             <div class="add-to-cart-wrapper">

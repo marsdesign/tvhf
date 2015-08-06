@@ -36,13 +36,15 @@ $_shopMenuActive = Mage::getModel('cms/block')->load('shop_menu')->getIsActive()
 $_menu = $this->getHtml('level-top');
 ?>
 <?php if($_shopMenuActive): ?>
-    <div class="sub-menu">
+    <div class="shop-menu">
     	<?php //echo $_menu ?>
     	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('shop_menu')->toHtml();?>
     </div>
 <?php else: ?>
-    <div class="sub-menu">
-    	<?php echo $_menu ?>
+    <div class="shop-menu">
+    	<ul>
+    		<?php echo $_menu ?>
+    	</ul>
     </div>
 <?php endif ?>
 
