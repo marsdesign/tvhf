@@ -36,7 +36,7 @@
 
 <?php 
 // get custom attributes
-$_video         = $_product->getVideo(); // vimeo video url
+$_video     = $_product->getVideo(); // vimeo video url
 $parts      = parse_url($_video);
 $path       = explode("/",$parts["path"]);
 $_videoId   = array_pop($path);
@@ -286,6 +286,8 @@ if (in_array($ext, $supported_image)) {
     $j('#video-modal').on('hide.bs.modal', function (e) {
         $j('#video-modal').find('iframe').attr('src', '');
     })
-
+	$j(".product-view .product-options dd .input-box").mouseenter(function(){
+		$j(this).find("select").trigger("click");
+	});
 // ]]>
 </script>

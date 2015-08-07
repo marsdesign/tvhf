@@ -41,23 +41,16 @@
 <head>
 <?php echo $this->getChildHtml('head') ?>
 </head>
-<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().' cms cms-about"':'cms cms-about' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col1-layout">
-            <div class="main">
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="col-main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
-                </div>
-                <div class="image-right">
-                    <img src="skin/frontend/rwd/tvhf/images/girls/smiling-girl.jpg">
-                </div>
-            </div>
+		<div><?php echo $this->getChildHtml('breadcrumbs') ?></div>
+		<div><?php echo $this->getChildHtml('global_messages') ?></div>
+        <div class="main-container col1-layout slideshow">
+            <?php echo $this->getChildHtml('content') ?>
         </div>
 		<?php //echo $this->getChildHtml('footer_before') ?>
         <?php echo $this->getChildHtml('footer') ?>
@@ -66,6 +59,18 @@
     </div>
 </div>
 <?php echo $this->getAbsoluteFooter() ?>
+<script>
+	var t = setInterval(function(){
+		if($j("body").find(".owl-wrapper-outer").length > 0){
+			$j(".col-main > div.caption").each(function(index, element) {
+				$j(this).css({"margin-top":"-"+($j(this).height()/4)+"px"});
+			});
+			clearInterval(t);
+		};
+	},300);
+	
+</script>
+
 </body>
 </html>
 
