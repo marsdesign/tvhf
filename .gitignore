@@ -1,4 +1,6 @@
 .modgit/
+app/design/frontend/rwd/tvhf/template/bootstrap/girls/index-copy.phtml
+skin/frontend/rwd/tvhf/css/styles-nap-copy.css
 app/bootstrap.php
 app/code/community/Find/
 app/code/community/Phoenix/
