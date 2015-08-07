@@ -518,10 +518,11 @@ input,
 select,
 table,
 textarea {
-  color: #222;
-  font-size: 14px;
-  line-height: 1.5;
-  font-family: 'whitney', sans-serif;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.25;
+  font-family: 'ff-basic-gothic-web-pro', sans-serif;
+  font-weight:200;
 }
 
 a {
@@ -544,11 +545,13 @@ ul {
  */
 ::-moz-selection {
     background:#000;
+    color:#fff;
     text-shadow:none
 }
 
 ::selection {
     background:#000;
+    color:#fff;
     text-shadow:none
 }
 
@@ -578,7 +581,7 @@ h6,.h6 {
   font-weight: 400;
   font-style: normal;
   text-rendering: optimizeLegibility;
-  font-family: 'vonnes', sans-serif;
+  font-family: 'nimbus-sans-extended', sans-serif;
   text-transform:uppercase;
 }
 h1, .h1 {
@@ -597,12 +600,12 @@ h3, .h3 {
 
   font-size: 21px;
   /* text-transform: uppercase; */
-  /* font-weight: 500; */
+  /* font-weight: 400; */
 }
 h4,.h4,
 h5,.h5,
 h6,.h6 {
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom:7px;
   font-size: 15px;
   text-transform: uppercase;
@@ -684,7 +687,7 @@ h6,.h6 {
   color: #555;
   margin-bottom: 0;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
 }
 .block-title small {
   font-size: 100%;
@@ -854,7 +857,7 @@ body:not(.customer-account) .block:first-child .block-title {
   border-top: none;
   display:none;
   font-weight: 400;
-  font-family:"vonnes",sans-serif;
+  font-family:"nimbus-sans-extended",sans-serif;
   text-transform:uppercase;
   font-size:12px;
 }
@@ -866,7 +869,7 @@ body:not(.customer-account) .block:first-child .block-title {
 .block-account li,
 .block-cms-menu li {
   font-weight: 400;
-  font-family:"vonnes",sans-serif;
+  font-family:"nimbus-sans-extended",sans-serif;
   text-transform:uppercase;
   font-size:12px;
 }
@@ -950,7 +953,7 @@ body:not(.customer-account) .block:first-child .block-title {
   text-transform: uppercase;
   vertical-align: middle;
   white-space: nowrap;
-  font-family: "vonnes",sans-serif;
+  font-family: "nimbus-sans-extended",sans-serif;
   font-weight: 300;
 }
 .button:hover,
@@ -1845,7 +1848,7 @@ span.weee {
 .item-options dt {
   float: left;
   clear: left;
-  font-weight: 600;
+  font-weight: 400;
   padding-right: 5px;
   /* font-style: italic; */
 }
@@ -2502,7 +2505,7 @@ li.centinel-logos div.input-box img {
 label {
   display: inline-block;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
@@ -3144,7 +3147,7 @@ body {
   height:30px;
   line-height:30px;
   text-transform: uppercase;
-  font-family: "vonnes", sans-serif;
+  font-family: "nimbus-sans-extended", sans-serif;
   /* letter-spacing: 1px; */
   font-weight: 300;
 }
@@ -3179,7 +3182,7 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 12px;
-    font-family: "vonnes", 'sans-serif';
+    font-family: "nimbus-sans-extended", 'sans-serif';
   }
   .header-links a{
     display: block;
@@ -3371,7 +3374,7 @@ body {
   width: 25%;
   height: 44px;
   background: #FFFFFF;
-  font-family: "vonnes", 'sans-serif';
+  font-family: "nimbus-sans-extended", 'sans-serif';
   text-transform:uppercase;
   line-height: 42px;
   text-align: center;
@@ -3379,6 +3382,7 @@ body {
 }
 .skip-link .fa{
   font-size:16px;
+  color:#ccc;
 }
 
 @media only screen and (min-width: 771px) {
@@ -3507,8 +3511,14 @@ a.skip-link {
 .account-cart-wrapper {
   position: absolute;
   top: 0px;
-  right: 22px;
+  right: 12px;
 }
+@media only screen and (min-width: 979px) {
+  .account-cart-wrapper {
+    right: 22px;
+  }
+}
+
 @media only screen and (max-width: 770px) {
   .account-cart-wrapper {
     position: static;
@@ -3584,7 +3594,7 @@ a.skip-link {
 }
 .nav-primary li.level0 > a {
   text-transform: uppercase;
-  font-family: "vonnes", 'sans-serif';
+  font-family: "nimbus-sans-extended", 'sans-serif';
   color: #444;
   font-weight: 400;
 }
@@ -4254,7 +4264,7 @@ p.product-name a:hover {
 
 .products-grid .price-box .price{
   font-size: 14px;
-  font-family: "vonnes", sans-serif;
+  font-family: "nimbus-sans-extended", sans-serif;
 }
 
 .products-grid .add-to-links {
@@ -4952,7 +4962,7 @@ p.product-name a:hover {
 .product-view .product-shop .price-box .special-price .price,
 .product-view .product-shop .price-box .full-product-price .price {
   font-size: 24px;
-  font-family: "vonnes", sans-serif;
+  font-family: "nimbus-sans-extended", sans-serif;
 }
 .product-view .product-shop .price-box .special-price .price-label {
   font-size: 16px;
@@ -6306,7 +6316,7 @@ p.product-name a:hover {
   margin: 5px 0;
 }
 .cart-table .product-cart-sku .label {
-  font-weight: 600;
+  font-weight: 400;
 }
 .cart-table .btn-empty {
   float: left;
@@ -6510,7 +6520,7 @@ p.product-name a:hover {
   }
   .cart-table .price,
   .cart-table .product-cart-price:before {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 15px;
   }
   .cart-table .cart-footer-actions {
@@ -6934,7 +6944,7 @@ p.product-name a:hover {
 }
 
 .opc h3 {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .opc .buttons-set {
@@ -7739,7 +7749,7 @@ body.customer-account .my-account .order-details h2 {
 }
 body.customer-account .my-account .addresses-list h3 {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
 }
 body.customer-account .my-account .fieldset {
   margin-top: 30px;
@@ -7818,7 +7828,7 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
 }
 .dashboard .box-head h2 {
   /* font-size: 15px; */
-  /* font-weight: 600; */
+  /* font-weight: 400; */
   display: inline-block;
   margin-bottom: 0;
 }
@@ -7853,7 +7863,7 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
 .dashboard .col2-set .col-1 .box-title h3,
 .dashboard .col2-set .col-2 .box-title h2,
 .dashboard .col2-set .col-2 .box-title h3 {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -7953,7 +7963,7 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
   margin: 0 0 0 20px;
 }
 .order-info li.current {
-  font-weight: 600;
+  font-weight: 400;
 }
 .order-info li:first-child {
   margin-left: 0;
@@ -8017,7 +8027,7 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
 
 #my-orders-table .option-label {
   margin-left: 10px;
-  font-weight: 600;
+  font-weight: 400;
   font-style: italic;
 }
 #my-orders-table .option-value {
@@ -8818,7 +8828,7 @@ div.paypal-logo span > img {
 
 }
 #wishlist-table td[data-rwd-label]:before {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -8983,6 +8993,8 @@ div.paypal-logo span > img {
 .header-minicart {
   display: inline-block;
   float:right;
+  position:relative;
+  z-index:1;
 }
 @media only screen and (max-width: 770px) {
   .header-minicart {
@@ -9042,7 +9054,7 @@ div.paypal-logo span > img {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0px;
-  font-family: "vonnes",sans-serif;
+  font-family: "nimbus-sans-extended",sans-serif;
   /* color: #999; */
 }
 .header-minicart .block-subtitle .close {
@@ -9077,9 +9089,9 @@ div.paypal-logo span > img {
   /* font-weight: bold; */
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0;
-  font-family: "vonnes",sans-serif;
+  font-family: "nimbus-sans-extended",sans-serif;
 }
 .header-minicart .product-details .product-name a {
 
@@ -9131,9 +9143,9 @@ div.paypal-logo span > img {
   line-height: 2em;
   border-top: solid 2px #ddd;
   padding: 5px 0 10px 0;
-  font-family: "vonnes", sans-serif;
+  font-family: "nimbus-sans-extended", sans-serif;
   color: #333;
-  font-weight: 500;
+  font-weight: 400;
 }
 .header-minicart .subtotal .label {
   color: #333;
@@ -9159,7 +9171,7 @@ div.paypal-logo span > img {
   text-transform: uppercase;
   font-size: 13px;
   color: #333;
-  font-family: "vonnes",sans-serif;
+  font-family: "nimbus-sans-extended",sans-serif;
 }
 .header-minicart .minicart-actions .paypal-logo .paypal-or {
   line-height: 1.6;
@@ -9356,7 +9368,7 @@ div.paypal-logo span > img {
   border-bottom: 1px solid #cccccc;
 
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
 
   padding-bottom: 10px;
 }
@@ -10423,9 +10435,10 @@ a:focus {
   .nav-primary a {
       color:#808285;
       text-transform:uppercase;
-      font-family: "vonnes", sans-serif;
+      font-family: "nimbus-sans-extended", sans-serif;
       letter-spacing:2px;
       padding:0 10px;
+      font-size:14px;
   }
 }
 @media(min-width:991px){
@@ -10434,54 +10447,71 @@ a:focus {
   }  
 }
 
-.sub-menu{
+.shop-menu{
   display:none;
+  border-top:1px solid #dbdbdb;
 }
-.catalog-category-view .sub-menu{
-  display:block;
-}
-.sub-menu:before,
-.sub-menu:after{
+.shop-menu:before,
+.shop-menu:after{
     content:'';
     display:table;
     clear:both
 }
-.sub-menu {
-    border-top:1px solid #dbdbdb;
+@media(min-width:771px){
+  .catalog-category-view .shop-menu{
+    display:block;
+  }
 }
-.sub-menu ul {
-    margin:0 auto 90px;
+.shop-menu ul {
+    margin:0 auto;
     max-width:1200px;
     list-style:none;
 }
-.sub-menu span {
+.shop-menu span span {
     padding:0;
     margin:0;
-    font-weight:600;
+    font-size:12px;
+    font-family: "nimbus-sans-extended", sans-serif;
+    font-weight:400;
     color:#3f3f3f;
     text-transform:uppercase;
-    font-size:12px;
-    font-weight:300;
     display:block;
 }
-.sub-menu li {
+.shop-menu li {
     float:left;
     width:20%;
     text-align:center;
     margin:0;
     font-size:12px;
     list-style:none;
+    line-height:normal;
 }
-.sub-menu a{
+.shop-menu a{
   display:block;
-  padding:10px;
+  padding:0 10px;
+  height: 40px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
-.sub-menu li.active a,
-.sub-menu li a:hover{
+.shop-menu .item-wrap {
+  display:inline-block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.shop-menu li.active a,
+.shop-menu li a:hover,
+.shop-menu li a:hover span,
+.shop-menu li.active a span{
   background:#949599;
   color:#fff;
 }
 
+
+ /*  minicart ============================================ */
 .header-minicart .qty-wrapper{
   display:none;
 }
@@ -10686,7 +10716,7 @@ a:focus {
   display:block;
   margin:0 auto;
   text-transform:uppercase;
-  font-family:'vonnes', sans-serif;
+  font-family:'nimbus-sans-extended', sans-serif;
   letter-spacing:2px;
   font-size:13px;
   cursor:pointer;
@@ -10713,7 +10743,7 @@ a:focus {
   border-top: solid 2px #ddd;
   padding-top: 15px;
   /* text-transform: uppercase; */
-  font-weight: 500;
+  font-weight: 400;
 }
 .home-featured .item{
   margin:0 10px;
@@ -10906,7 +10936,7 @@ a:focus {
   font-size:14px;
   padding:15px 0 13px 0;
   color:#898a8e;
-  font-family:"vonnes", sans-serif;
+  font-family:"nimbus-sans-extended", sans-serif;
   text-transform:uppercase;
   letter-spacing:1px;
   text-align:center;
@@ -11073,13 +11103,6 @@ a:focus {
 }
 
 
-
-
-
-
-
-
-
  /*  category ============================================ */
 .products-grid .actions {
   opacity:0;
@@ -11167,7 +11190,7 @@ a.sort-by-switcher.sort-by-switcher i {
     color:#fff;
     text-transform:uppercase;
     border:none;
-    font-family:vonnes;
+    font-family:nimbus-sans-extended;
     letter-spacing:2px;
     width:100%;
 }
@@ -11194,7 +11217,7 @@ a.sort-by-switcher.sort-by-switcher i {
 }
 .quantity-sizing:nth-child(3) {
     font-size:15px;
-    font-family:vonnes;
+    font-family:nimbus-sans-extended;
     text-transform:uppercase
 }
 
@@ -11269,21 +11292,6 @@ select {
     vertical-align:middle;
     margin-left:-5px
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media(min-width:768px){
@@ -11361,8 +11369,6 @@ select {
   max-width:600px;
   margin:0 auto;
 }
-
-
 
 .video-caption .button-hollow{
   padding:10px;
@@ -11591,6 +11597,14 @@ select {
   .section-shop:nth-child(4){
 
   }
+}
+
+ /*  tvhf girls ============================================ */
+.heading-sans{
+  font-family:"adobe-text-pro", serif;
+  font-style:italic;
+  text-transform: none;
+  font-size:30px;
 }
 
 /* embed ================================ */

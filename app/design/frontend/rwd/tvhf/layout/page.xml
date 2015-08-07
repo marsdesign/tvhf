@@ -72,7 +72,7 @@
                 <action method="addItem"><type>skin_js</type><name>js/minicart.js</name></action>
                 <!-- Typekit -->
                 <block type="core/text" name="head.typekit.js">
-                    <action method="setText"><text><![CDATA[<script src="//use.typekit.net/rgf0lxw.js"></script>]]>&#10;</text></action>
+                    <action method="setText"><text><![CDATA[<script src="//use.typekit.net/ido3rkk.js"></script>]]>&#10;</text></action>
                 </block>
                 <block type="core/text" name="head.typekit.load">
                     <action method="setText"><text><![CDATA[<script>try{Typekit.load();}catch(e){}</script>]]>&#10;</text></action>

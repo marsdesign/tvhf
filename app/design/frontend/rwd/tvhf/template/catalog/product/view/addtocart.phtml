@@ -28,6 +28,17 @@
 	$_showSizing = $_product->getShowSizing();
  ?>
 <?php $buttonTitle = $this->__('ADD TO SHOPPING BAG'); ?>
+<?php $_product = $this->getProduct(); ?>
+
+<?php
+// mmc marsdesign added
+$_showSizing    = $_product->getShowSizing();
+if(!empty($_showSizing)){
+    $_pdp_sizing = $this->getLayout()->createBlock('cms/block')->setBlockId('pdp_sizing')->toHtml();
+    $_videoIdSizing = getVideoId($_pdp_sizing);
+}
+?>
+
 <?php if($_product->isSaleable()): ?>
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
@@ -43,5 +54,14 @@
             <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
             <?php echo $this->getChildHtml('', true, true) ?>
         </div>
+
+        <?php if(!empty($_showSizing)){ ?>
+            <div class="sizing-link">
+                <a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoIdSizing;?>">
+                    Sizing
+                </a>
+            </div>
+        <?php } ?>
+
     </div>
 <?php endif; ?>
