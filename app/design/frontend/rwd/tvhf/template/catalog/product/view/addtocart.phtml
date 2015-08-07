@@ -45,16 +45,6 @@ if(!empty($_showSizing)){
         <div class="qty-wrapper">
             <label for="qty"><?php echo $this->__('Qty') ?></label>
             <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-            <?php if($_showSizing):?>
-            <span class="show-sizing">SIZING</span>
-            <?php endif; ?>
-        </div>
-        <?php endif; ?>
-        <div class="add-to-cart-buttons">
-            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
-            <?php echo $this->getChildHtml('', true, true) ?>
-        </div>
-
         <?php if(!empty($_showSizing)){ ?>
             <div class="sizing-link">
                 <a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoIdSizing;?>">
@@ -62,6 +52,13 @@ if(!empty($_showSizing)){
                 </a>
             </div>
         <?php } ?>
+        </div>
+        <?php endif; ?>
+        <div class="add-to-cart-buttons">
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+            <?php echo $this->getChildHtml('', true, true) ?>
+        </div>
+
 
     </div>
 <?php endif; ?>

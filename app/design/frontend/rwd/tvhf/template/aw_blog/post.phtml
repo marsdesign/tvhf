@@ -26,9 +26,10 @@
 ?><?php $post = $this->getPost(); ?>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="postWrapper">
+    <div class="blog-image"><?php preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $result); echo is_array($result[0])?$result[0][0]:'' ; ?></div>
     <div class="postTitle">
         <h2><?php echo $post->getTitle(); ?></h2>
-        <h3><?php echo $post->getCreatedTime(); ?></h3>
+        <h3><?php echo date('l, F j, Y',strtotime($post->getCreatedTime())); ?></h3>
     </div>
 
     <div class="postContent std"><?php echo $post->getPostContent(); ?></div>
