@@ -125,7 +125,6 @@ skin/frontend/enterprise
 skin/frontend/rwd/default/
 skin/install/
 var/
-blog/
 dbadmin/
 skin/frontend/rwd/default/
 skin/frontend/tvhf/default/scss/.sass-cache/
