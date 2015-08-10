@@ -206,6 +206,7 @@ div.product-info{
     color: #888;
     font-size: 15px;
     line-height: normal;
+	padding-top:40px;
 }
 .product-description p {
     margin: 0px 0px 1.5em;
@@ -1366,6 +1367,94 @@ dl#narrow-by-list dd a:hover{
 	width:0;
 	visibility:hidden;
 	
+}
+/*Social Share Icons*/
+.ssi .stButton .stFb,.ssi .stButton .stTwbutton,.ssi .stButton .stMainServices {
+    background-image: url("/images/facebook_counter.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    white-space: nowrap;
+    font-family: Verdana,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 16px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    line-height: 16px;
+    /*width: auto;*/
+    position: relative;
+}
+.ssi .stArrow{
+	background:none !important;
+}
+.ssi .stHBubble {
+    border: none !important;
+    background: none !important;
+}
+.ssi{
+	display:none;
+}
+h3.ssi-title{
+	color:#a7aaaa;
+	font-size:18px;
+	margin-right:20px;
+	display:inline-block;
+	vertical-align:middle;
+	font-weight:400;
+	margin-bottom:15px;
+}
+.social-sharing-icons{
+	display:none;
+	text-align: center;
+	margin-top: 25px;
+}
+.social-sharing-icons > span{
+	display:inline-block;
+	width:62px;
+	border:1px solid #ccc;
+	border-radius:4px;
+	margin-right:10px;
+	line-height:1px;
+	position:relative;
+	background:#fff;
+	overflow:hidden;
+}
+.social-sharing-icons > span > i, .social-sharing-icons > span > span.counter {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    color: #999;
+    padding: 5px;
+    position: relative;
+    background: #fff;
+    z-index: 1;
+}
+.social-sharing-icons > span > span.counter {
+	font-weight:700;
+    font-size: 12px;
+}
+.social-sharing-icons > span > i{
+	color:#fff;
+	background:url();
+	background: url(../images/ssi-bgnd-dark.jpg) repeat-x center center;
+    font-size: 13px;
+	background-size:100% 100%;
+    padding: 4px 0 6px 0;
+}
+.social-sharing-icons > span > i.lighter{
+	background: url(../images/ssi-bgnd-light.jpg) repeat-x center center;
+	background-size:100% 100%;
+}
+.social-sharing-icons > span > span.st_email_hcount {
+    display: inline-block;
+    left: 0px;
+	top:0px
+    height: 26px;
+	width:60px
+    overflow: hidden;
+    width: 28px;
+	position:absolute;
+	z-index:0;
 }
 @media (max-width: 1200px){
 	.girls .col-main{
