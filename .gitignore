@@ -1,4 +1,6 @@
 .modgit/
+app/design/frontend/rwd/tvhf/template/bootstrap/girls/index-copy.phtml
+skin/frontend/rwd/tvhf/css/styles-nap-copy.css
 app/bootstrap.php
 app/code/community/Find/
 app/code/community/Phoenix/
@@ -133,7 +135,9 @@ skin/frontend/tvhf/default/scss/.sass-cache/
 .htaccess.sample
 api.php
 index.html
-
+_notes
+_notes/
+.gitignore
 # OS generated files #
 ######################
 .DS_Store

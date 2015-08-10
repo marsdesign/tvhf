@@ -32,9 +32,10 @@
 <?php echo $this->getChildHtml('aw_blog_comments_toolbar'); ?>
 <?php foreach ($posts as $post): ?>
     <div class="postWrapper">
+        <div class="blog-image"><?php preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $result); echo is_array($result[0])?$result[0][0]:'' ; ?></div>
         <div class="postTitle">
             <h2><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></h2>
-            <h3><?php echo $post->getCreatedTime(); ?></h3>
+            <h3><?php echo date('l, F j, Y',strtotime($post->getCreatedTime())); ?></h3>
         </div>
         <div class="postContent std"><?php echo $post->getPostContent(); ?></div>
 

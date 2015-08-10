@@ -24,6 +24,10 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<?php $_product = $this->getProduct();
+	$_showSizing = $_product->getShowSizing();
+ ?>
+<?php $buttonTitle = $this->__('ADD TO SHOPPING BAG'); ?>
 <?php $_product = $this->getProduct(); ?>
 
 <?php
@@ -35,20 +39,12 @@ if(!empty($_showSizing)){
 }
 ?>
 
-<?php $buttonTitle = $this->__('Add to Cart'); ?>
 <?php if($_product->isSaleable()): ?>
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
         <div class="qty-wrapper">
-            <label for="qty"><?php echo $this->__('Qty:') ?></label>
+            <label for="qty"><?php echo $this->__('Qty') ?></label>
             <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
-        </div>
-        <?php endif; ?>
-        <div class="add-to-cart-buttons">
-            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
-            <?php echo $this->getChildHtml('', true, true) ?>
-        </div>
-
         <?php if(!empty($_showSizing)){ ?>
             <div class="sizing-link">
                 <a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoIdSizing;?>">
@@ -56,6 +52,13 @@ if(!empty($_showSizing)){
                 </a>
             </div>
         <?php } ?>
+        </div>
+        <?php endif; ?>
+        <div class="add-to-cart-buttons">
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+            <?php echo $this->getChildHtml('', true, true) ?>
+        </div>
+
 
     </div>
 <?php endif; ?>
