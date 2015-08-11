@@ -48,6 +48,8 @@ h1, .h1 {
 .catalog-category-view .main-container{
 	padding-top:0px;
 }
+
+/*
 .cms-shop .sub-menu,
 .catalog-category-view .sub-menu{
 	max-width:1260px;
@@ -69,7 +71,7 @@ h1, .h1 {
 	width:10000px;
 	display:block;
 }
-
+*/
 .catalog-category-view .toolbar{
     line-height: 12px;
     margin-top: 0px;
@@ -187,7 +189,6 @@ h1, .h1 {
 .product-view .product-essential::after {
     padding-top: 50px;
 }
-shadowed-divider.jpg
 .products-grid .actions{
 	display:none;
 }
@@ -240,6 +241,7 @@ div.product-info{
 .sub-menu li a:hover{
 	text-decoration:none;
 }
+/*
 .catalog-category-view .products-grid .product-image{
 	height:290px;
 	text-align:center;
@@ -252,7 +254,7 @@ div.product-info{
 .products-grid > li{
 	margin-bottom:30px;
 }
-
+*/
 .products-list > li .product-image{
 	height:420px;
 	text-align:center;
@@ -367,7 +369,9 @@ label.required::after, span.required::after {
 .product-view .product-options dd .input-box{
 	position:relative;
 	border:1px solid #ccc;
+	z-index:1;
 }
+/*
 .product-options dl.last dd.last .input-box{
 	border:none;
 	padding:0;
@@ -375,6 +379,7 @@ label.required::after, span.required::after {
 .product-options dl.last dd.last .input-box .price-notice{
 	display:none;
 }
+*/
 .product-options ul.options-list input.checkbox {
     margin-left: 0px;
 	margin-top:9px;
@@ -395,9 +400,11 @@ label.required::after, span.required::after {
 	border-left:1px solid #ccc;
 	pointer-events: none;
 }
+/*
 .product-options dl.last dd.last .input-box::after{
 	display:none;
 }
+*/
 
 .product-options-bottom .addthis_sharing_toolbox{
 	display:none;
@@ -449,6 +456,7 @@ label.required::after, span.required::after {
 .product-view .add-to-cart .qty-wrapper label {
     line-height: 28px;
 }
+/*
 .product-options-bottom .add-to-cart .qty-wrapper::after {
     content: "";
     width: 35px;
@@ -461,6 +469,7 @@ label.required::after, span.required::after {
     background: #fff url("../images/product/down-arrow-small.jpg") no-repeat center center;
 	border:1px solid #ccc;
 }
+*/
 /*CART*/
 .cart-footer-actions > button{
 	font-size:12px;
@@ -609,6 +618,11 @@ td.product-cart-remove{
 }
 #shopping-cart-table{
 	border:1px solid #ccc;
+}
+/* fixes no border-right on table due to colspan=50 */
+.cart-table thead th:last-child,
+.cart-table tbody td:last-child{
+	border-right:solid 1px #ccc;
 }
 #shopping-cart-table a,
 #shopping-cart-table th,
@@ -1172,12 +1186,14 @@ a.aw-blog-read-more:after{
 .postWrapper p {
     margin: 0px 0px 1.5em;
 }
+/*
 .shop-menu a {
     line-height:15px;
 	font-size:9px;
 	font-style:italic;
 	color:#888;
 }
+*/
 div.sizing-link{
 	cursor:pointer;
 }
@@ -1322,7 +1338,7 @@ dl#narrow-by-list dd a:hover{
 	background:url(../images/filter-arrow.jpg) no-repeat center center;
 	vertical-align:middle;
 }
-
+/*
 .shop-menu a span{
 	display:block;
 	font-size:12px;
@@ -1339,7 +1355,7 @@ dl#narrow-by-list dd a:hover{
 }
 .shop-menu a.single-line {
 	padding:16px 0;
-}
+}*/
 .block-layered-nav .currently .block-subtitle {
     font-size: 12px;
     font-weight: 400;

@@ -2,10 +2,17 @@
 <?php $_categories = $_helper->getStoreCategories(false, true, false);?>
 <?php $_categories->addAttributeToSelect('image');?>
 <?php $_categories->addAttributeToSelect('description');?>
-<?php if (count($_categories) > 0): ?>
+<?php 
+$i = 0;
+if (count($_categories) > 0): 
+?>
     <div class="shop-home">
-        <?php foreach($_categories as $_category): ?>
-            <div class="section-shop">
+        <?php foreach($_categories as $_category): 
+        $i++;
+        ?>
+
+
+            <div class="section-shop section-shop-<?php echo $i;?>">
             	<div class="shop-image">
 				<?php
 				    $_imgHtml   = '';
@@ -25,11 +32,8 @@
                 	</div>
             	</div>
             </div>
+
+
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
-
-
-<style>
-
-</style>

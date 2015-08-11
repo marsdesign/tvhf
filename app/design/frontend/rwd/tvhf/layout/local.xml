@@ -141,11 +141,7 @@
           <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
             <reference name="head">
-                <action method="addItem"><type>skin_js</type><name>js/lib/jquery.waypoints.min.js</name></action>
-                <action method="addItem"><type>skin_js</type><name>js/lib/sticky.min.js</name></action>
-                <action method="addItem"><type>skin_js</type><name>js/lib/jquery.mousewheel.js</name></action>
-                <action method="addItem"><type>skin_js</type><name>js/lib/jquery.transit.min.js</name></action>
-                <action method="addItem"><type>skin_js</type><name>js/lib/jquery.scrollAnimator.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/lib/ScrollMagic.min.js</name></action>
             </reference>
           </reference>
         <reference name="content">
