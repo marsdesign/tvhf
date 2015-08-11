@@ -69,10 +69,10 @@
     </div>
     <?php echo $this->getProductListHtml() ?>
 <?php else: ?>
-    <?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+    <?php /* if($_description=$this->getCurrentCategory()->getDescription()): ?>
         <div class="category-description std">
             <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
         </div>
-    <?php endif; ?>
+    <?php endif; */ ?>
     <?php echo $this->getProductListHtml() ?>
 <?php endif; ?>

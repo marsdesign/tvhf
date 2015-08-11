@@ -39,6 +39,11 @@
                     <template>page/1column-withimage.phtml</template>
                     <layout_handle>page_one_column_withimage</layout_handle>
                 </one_column_withimage>
+                <one_column_fullwidth module="page" translate="label">
+                    <label>1 Column Full Width</label>
+                    <template>page/1column-fullwidth.phtml</template>
+                    <layout_handle>page_one_column_fullwidth</layout_handle>
+                </one_column_fullwidth>
             </layouts>
         </page>
 		<helpers>

@@ -270,7 +270,15 @@ div.product-info{
 	position:relative;
 	overflow:visible;
 	margin-bottom:60px;
+
+	/* mmc */
+	border-bottom:solid 1px #dbdbdb;
 }
+/* mmc */
+.products-list > li:last-child{
+	border-bottom:none;
+}
+/*
 .products-list > li::before{
 	content:"";
 	position:absolute;
@@ -281,6 +289,7 @@ div.product-info{
 	height:1px;
 	background: #dbdbdb;
 }
+*/
 .products-list .product-shop .product-secondary {
     float: none;
     text-align: left;

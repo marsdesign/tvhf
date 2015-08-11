@@ -33,6 +33,7 @@
 ?>
 <?php if($this->getCollection()->getSize()): ?>
 <div class="toolbar">
+<div class="container">
     <?php if( $this->isExpanded() ): ?>
         <div class="sorter">
             <?php if( $this->isEnabledViewSwitcher() ): ?>
@@ -95,5 +96,6 @@
         <?php echo $this->getPagerHtml() ?>
 
     </div>
+</div><?php // close .container ?>
 </div>
 <?php endif ?>

@@ -53,6 +53,7 @@
     <ol class="products-list" id="products-list">
     <?php foreach ($_productCollection as $_product): ?>
         <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+        <div class="container">
             <?php // Product Image ?>
             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
                 <?php /* Based on the native RWD styling, product images are displayed at a max of ~400px wide when viewed on a
@@ -114,6 +115,7 @@
                     </div>
                 </div>
             </div>
+        </div><?php // close .container ?>
         </li>
     <?php endforeach; ?>
     </ol>
@@ -125,6 +127,7 @@
 
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
+    <div class="container">
     <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col">
         <?php $i=0; foreach ($_productCollection as $_product): ?>
             <?php /*if ($i++%$_columnCount==0): ?>
@@ -174,11 +177,14 @@
             <?php endif*/ ?>
         <?php endforeach ?>
     </ul>
+    </div><?php // close container ?>
     <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
 
     <div class="toolbar-bottom">
+        <div class="container">
         <?php echo $this->getToolbarHtml() ?>
+        </div>
     </div>
 </div>
 <?php endif; ?>

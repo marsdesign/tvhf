@@ -139,7 +139,7 @@
     <!-- Home Page -->
     <cms_index_index>
           <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/1column-home.phtml</template></action>
             <reference name="head">
                 <action method="addItem"><type>skin_js</type><name>js/lib/ScrollMagic.min.js</name></action>
             </reference>
@@ -151,13 +151,13 @@
 
    <catalog_category_default>
         <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/1column-fullwidth.phtml</template></action>
         </reference>
     </catalog_category_default>
     
     <catalog_category_layered>
         <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/1column-fullwidth.phtml</template></action>
         </reference>
         <reference name="left_first">
             <!-- removes layered from left -->
