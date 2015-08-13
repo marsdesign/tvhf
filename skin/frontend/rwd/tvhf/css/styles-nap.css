@@ -2,6 +2,7 @@
 h1, .h1 {
     font-size: 26px;
 }
+/*
 .cms-about .main-container,
 .cms-about .page{
 	height:auto;
@@ -24,6 +25,7 @@ h1, .h1 {
 .cms-about .footer-top {
     border-top: none;
 }
+*/
 .cms-about .image-right{
 	position:absolute;
 	width:50%;
@@ -32,16 +34,20 @@ h1, .h1 {
 	bottom:0;
 	background:url(../images/girls/smiling-girl.jpg) no-repeat right bottom;
 	background-size:contain;
+	z-index:-1;
 }
 .cms-about .image-right img{
 	display:none;
 }
+/*
 .cms-about .footer{
 	padding-top:0;
 }
+*/
 .cms-about .col-main{
 	width:50%;
 	float:left;
+	padding-bottom:30px;
 }
 /* Category Page Theme */
 
@@ -221,9 +227,10 @@ div.product-info{
 .products-grid .product-name{
 	font-size:12px;
 	color:#3f3f3f;
-	display:inline-block;
+	display:block;
 	width:170px;
 	margin:15px auto 0 auto;
+	text-align:center;
 }
 .cart-table h2{
 	text-transform:none;
@@ -521,6 +528,10 @@ label.required::after, span.required::after {
 a.right-arrowed,
 button.right-arrowed{
 	color:#888;
+	text-transform:uppercase;
+	font-size:12px;
+  	font-family: 'nimbus-sans-extended', sans-serif;
+  	text-transform:uppercase;
 }
 .right-arrowed:after{
 	content:"";
@@ -1036,6 +1047,8 @@ ul.form-list{
 .wrapper, .page{
 	/*height:auto;*/
 }
+
+/*
 .girls .owl-controls.clickable{
 	display:none !important;
 }
@@ -1079,6 +1092,7 @@ ul.form-list{
 	font-size:15px;
 	line-height:18px;
 }
+*/
 /*BLOG*/
 .blog-cat-view .postDetails,
 .blog-post-view .postDetails,
@@ -1277,10 +1291,13 @@ div.sizing-link{
 	border-top:none;
 }
 /*top links*/
-.header-top-links a{
-	font-family: "nimbus-sans-extended",sans-serif;
-	font-size:10px;
+.skip-link{
 	color:#aaa;
+	font-size:12px;
+	font-family: "nimbus-sans-extended",sans-serif;
+}
+@media(min-width:771px){
+	font-size:10px;
 }
 /*Layered Navigation*/
 
@@ -1482,6 +1499,7 @@ h3.ssi-title{
 	z-index:0;
 }
 @media (max-width: 1200px){
+	/*
 	.girls .col-main{
 		width:40%;
 	}
@@ -1495,6 +1513,7 @@ h3.ssi-title{
 		margin-left:0;
 		padding-left:0;
 	}
+	*/
 }
 
 @media (max-width: 979px){
@@ -1514,6 +1533,7 @@ h3.ssi-title{
 	#checkout-step-review {
 		padding: 20px 10px;
 	}
+	/*
 	.girls .col-main{
 		width:30%;
 	}
@@ -1524,17 +1544,20 @@ h3.ssi-title{
 		margin-left:0;
 		padding-left:0;
 	}
+	*/
 	
 }
 @media (max-width: 770px){
 
+/*
+	.cms-about .main-container{
+		padding-bottom:0px;
+	}
+
+	*/
 	.cms-about .col-main{
 		width:100%;
 		float:none;
-	}
-
-	.cms-about .main-container{
-		padding-bottom:0px;
 	}
 	.cms-about .image-right{
 		position:relative;
@@ -1551,7 +1574,7 @@ h3.ssi-title{
 		height:auto;
 		max-width:568px;
 	}	
-
+/*
 	.girls .mobile-caption{
 		display:block;
 		background:#fff;
@@ -1563,6 +1586,7 @@ h3.ssi-title{
 	.girls .image-right{
 		width:100%;
 	}
+	*/
 	.faq .left-group, .faq .right-group {
 		width: 100%;
 		float: none;

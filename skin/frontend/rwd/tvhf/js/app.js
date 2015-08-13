@@ -1026,6 +1026,26 @@ treat account and cart links different that the mobile skip-links skip link
     });
 
 
+    // ==============================================
+    // scroll to anchor
+    // ==============================================
+
+    $j(function() {
+        $j('.scrollto').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $j(this.hash);
+                target = target.length ? target : $j('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $j('html,body').animate({
+                        scrollTop: target.offset().top - 30
+                    }, 800);
+                    return false;
+                }
+            }
+        });
+    });
+
+
 
     // ==============================================
     // Layered Navigation Block

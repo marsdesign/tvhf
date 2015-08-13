@@ -1,8 +1,10 @@
 
 <?php if($this->getItems()->getSize()){ ?>
 
-    <?php foreach($this->getItems() as $_item): 
-
+    <?php 
+    $i=0;
+    foreach($this->getItems() as $_item): 
+        $i++;
         $img        = $_item->getImage();
         $img_src    = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $img;
 
@@ -12,13 +14,15 @@
         $link       = $_item->getLink();
     ?>
 
-    <div class="section-home">
-        <img class="section-background" src="<?php echo $img_src;?>">
-        <div class="text-wrap">
-            <div class="inner-text">
-                <h3><?php echo $_item->getTitle();?></h3>
-                <?php echo $_item->getDescription();?>
-                <?php if(!empty($link)){ ?><a href="<?php echo $link;?>" class="button-hollow"><?php }?>shop now <i class="fa fa-angle-right"></i><?php if(!empty($link)){ ?></a><?php }?>
+    <div class="section-home" id="section<?php echo $i;?>">
+        <div class="container">
+            <img class="section-background" src="<?php echo $img_src;?>">
+            <div class="text-wrap">
+                <div class="inner-text">
+                    <h3><?php echo $_item->getTitle();?></h3>
+                    <?php echo $_item->getDescription();?>
+                    <?php if(!empty($link)){ ?><a href="<?php echo $link;?>" class="button-hollow"><?php }?>shop now <i class="fa fa-angle-right"></i><?php if(!empty($link)){ ?></a><?php }?>
+                </div>
             </div>
         </div>
     </div>

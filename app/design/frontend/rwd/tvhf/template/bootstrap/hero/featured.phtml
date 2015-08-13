@@ -42,10 +42,10 @@
             $j(".home-header nav li").css("opacity",1-e.progress);
             $j(".scroll-down-arrow").css("opacity",1-e.progress);
 
-            if(newH == 0){
-                $j(".page-header").addClass("slide-down");
+            if(e.progress >= 0.9){
+                $j(".page-header").addClass("fade-in");
             }else{
-                $j(".page-header").removeClass("slide-down");
+                $j(".page-header").removeClass("fade-in");
             }
 
         });     
