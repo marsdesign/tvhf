@@ -41,7 +41,7 @@
 
         <?php if ($this->getCategories()->count() && Mage::getStoreConfig('blog/menu/category')): ?>
             <div class="menu-categories">
-                <h5><?php echo Mage::helper('blog')->__('Categories'); ?></h5>
+                <h5><?php echo Mage::helper('blog')->__('By Topic'); ?></h5>
                 <ul>
                     <?php $cats = $this->getCategories(); ?>
                     <?php foreach ($cats as $cat): ?>

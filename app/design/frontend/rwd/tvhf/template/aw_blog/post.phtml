@@ -25,6 +25,16 @@
  */
 ?><?php $post = $this->getPost(); ?>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="page-title">
+    <h1><?php echo $this->__('Blog');?></h1>
+    <div class="back-button">
+        <button onclick="history.back();" class="button" title="<?php echo $this->__('Back') ?>" type="button">
+            <span>
+                <span><?php echo $this->__('Back') ?></span>
+            </span>
+        </button>
+    </div>
+</div>
 <div class="postWrapper">
     <div class="blog-image"><?php preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $result); echo is_array($result[0])?$result[0][0]:'' ; ?></div>
     <div class="postTitle">
@@ -33,19 +43,16 @@
     </div>
 
     <div class="postContent std"><?php echo $post->getPostContent(); ?></div>
-    <?php echo $this->getBookmarkHtml($post) ?>
-    <div class="tags"><?php echo Mage::getBlockSingleton('blog/blog')->getTagsHtml($post) ?></div>
-    <div class="postDetails">
-        <?php $postCats = $post->getCats(); ?>
-        <?php if (!empty($postCats)): ?>
-            <?php echo Mage::helper('blog')->__('Posted in'); ?>
-            <?php foreach ($postCats as $title => $url): ?>
-                <a href="<?php echo $url; ?>"><?php echo $title; ?></a>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <?php echo Mage::helper('blog')->__('Posted'); ?>
-        <?php endif; ?><?php echo $this->__("By"); ?> <h4 class="poster"><?php echo $post->getUser(); ?></h4>
+
+    <div class="back-button">
+        <button onclick="history.back();" class="button" title="<?php echo $this->__('Back') ?>" type="button">
+            <span>
+                <span><?php echo $this->__('Back') ?></span>
+            </span>
+        </button>
     </div>
+    <?php echo $this->getBookmarkHtml($post) ?>
+
 </div>
 
 <!-- Comment Section -->

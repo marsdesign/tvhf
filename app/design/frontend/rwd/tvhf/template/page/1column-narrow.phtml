@@ -45,7 +45,7 @@
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
     <?php echo $this->getChildHtml('global_notices') ?>
-    <div class="page page-withimage">
+    <div class="page page-narrow">
         <?php echo $this->getChildHtml('header') ?>
         <div class="main-container col1-layout">
             <div class="main">
@@ -54,10 +54,9 @@
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
-                <div class="image-right"></div>
             </div>
         </div>
-		<?php //echo $this->getChildHtml('footer_before') ?>
+        <?php //echo $this->getChildHtml('footer_before') ?>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('global_cookie_notice') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>
@@ -66,4 +65,3 @@
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>
-

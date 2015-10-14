@@ -1045,6 +1045,26 @@ treat account and cart links different that the mobile skip-links skip link
         });
     });
 
+    // ==============================================
+    // hilight nav
+    // ==============================================
+
+    $j(function(){
+      $j('.nav-primary a').each(function() {
+        if ($j(this).attr('href') == window.location.href) {
+          $j(this).addClass('current');
+        }
+      });
+    }); 
+
+    $j(function(){
+      $j('.shop-menu a').each(function() {
+        if ($j(this).attr('href') == window.location.href) {
+          $j(this).addClass('active');
+        }
+      });
+    }); 
+
 
 
     // ==============================================

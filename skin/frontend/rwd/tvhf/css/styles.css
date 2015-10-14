@@ -3577,7 +3577,6 @@ a.skip-link {
   text-decoration: none;
   position: relative;
   display: block;
-
   line-height: 36px;
 }
 .nav-primary li {
@@ -3674,8 +3673,9 @@ a.skip-link {
     border-bottom: none;
   }
   .nav-primary a:hover,
+  .nav-primary a.current,
   .nav-primary li:hover > a {
-    color: #222;
+    color: #231f20;
   }
   .nav-primary .menu-active {
     z-index: 200;
@@ -9425,31 +9425,6 @@ div.paypal-logo span > img {
 .cms-no-route .std img {
   max-width: 100%;
 }
-.cms-page-view .std p,
-.cms-no-route .std p {
-
-  font-size: 14px;
-  line-height: 24px;
-}
-.cms-page-view .std h1,
-.cms-no-route .std h1 {
-
-}
-.cms-page-view .std h2,
-.cms-no-route .std h2 {
-
-}
-.cms-page-view .std li,
-.cms-no-route .std li {
-
-
-  font-size: 14px;
-  
-
-
-  font-style: italic;
-  line-height: 24px;
-}
 .cms-page-view .col-left:after,
 .cms-no-route .col-left:after {
   content: '';
@@ -9460,7 +9435,6 @@ div.paypal-logo span > img {
 .cms-no-route .std img {
   width: 100%;
 }
-
 .cms-page-view .std .messages,
 .cms-home .std .messages,
 .cms-no-route .std .messages {
@@ -10352,6 +10326,36 @@ div.calendar table td.button {
 
 start here
 
+body text 58595b
+dark headers  414042 
+lighter text a6a8ab
+
+cream fill f1f2f2
+
+colors
+nav light gray      939598
+nav dark gray(black)      231f20
+
+lines 6d6e71
+hollow buttons border + text 808285
+
+sidenav light gray  a6a6a6
+sidenav dark gray   414042
+gallery light gray  808184
+gallery dark gray   404041
+shop nav color      404041
+shop nav            939598
+
+button background   404041
+secondary button    808285
+
+checkout background 58595b
+
+footer
+social a7a9ac
+top line a7a9ac
+nav 808285
+
 zzz
  * ============================================ */
 
@@ -10406,6 +10410,10 @@ a:focus {
 
 .nav-primary a{
   padding:5px 25px;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
 }
 @media(min-width:771px){
 
@@ -10427,7 +10435,7 @@ a:focus {
   }
 
   .nav-primary a {
-      color:#808285;
+      color:#939598;
       text-transform:uppercase;
       font-family: "nimbus-sans-extended", sans-serif;
       letter-spacing:2px;
@@ -10496,12 +10504,22 @@ a:focus {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.shop-menu li.active a,
-.shop-menu li a:hover,
 .shop-menu li a:hover span,
-.shop-menu li.active a span{
+.shop-menu li a.active span{
+  color:#fff;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.shop-menu li a.active,
+.shop-menu li a:hover{
   background:#949599;
   color:#fff;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
 }
 
 
@@ -11139,6 +11157,52 @@ a:focus {
 }
 
 
+ /*  page types ============================================ */
+.page-withimage .image-right{
+  position:absolute;
+  width:50%;
+  top:0;
+  right:0;
+  bottom:0;
+  background-size:cover;
+  z-index:-1;
+}
+.page-withimage .col-main{
+  width:50%;
+  float:left;
+  padding-bottom:30px;
+}
+.cms-about .image-right,
+.cms-contact .image-right,
+.cms-returns .image-right,
+.cms-shipping .image-right{
+  background:url(../images/girls/smiling-girl.jpg) no-repeat left top;
+}
+
+@media (max-width: 770px){
+
+  .page-withimage .col-main{
+    width:100%;
+    float:none;
+  }
+  .page-withimage .image-right{
+    position:static;
+    width:100%;
+    text-align:center;
+    padding-bottom:100%;
+  } 
+}
+
+/* ============================================ *
+ * narrow pages
+ * ============================================ */
+.page-narrow .main{
+  max-width:768px;
+  margin:0 auto;
+  padding-bottom:60px;
+}
+
+
  /*  category ============================================ */
 .products-grid .actions {
   opacity:0;
@@ -11667,10 +11731,57 @@ select {
     height: 100% !important;    
 }
 .fullscreen-item {
-    background-position: 50% 0;
-    background-size: cover;
-    width:100%;
-    height:100%;
+  background-position: 50% 0;
+  background-size: cover;
+  width:100%;
+  height:100%;
+}
+.fullscreen-item .caption{
+    text-align:center;
+}
+.fullscreen-item .caption-wrap p{
+    margin-bottom:15px;
+    font-size:14px;
+}
+/* slide transitions */
+.fullscreen-item .caption,
+.fullscreen-item{
+  opacity:0;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.active .fullscreen-item .caption,
+.active .fullscreen-item{
+  opacity:1;
+}
+.active .fullscreen-item{
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.active .fullscreen-item .caption{
+  -webkit-transition-delay: 700ms;
+  -moz-transition-delay: 700ms;
+  -o-transition-delay: 700ms;
+  transition-delay: 700ms;
+}
+
+
+.fullscreen-item h3{
+    font-family:"adobe-text-pro", serif;
+    font-style:italic;
+    text-transform: none;
+    font-size:18px; 
+    margin-top:10px;
+    margin-bottom:10px;
+    text-align:center;
+}
+.fullscreen-item .hero-text .caption-wrap{
+  padding-left:40px;
+  padding-right:40px;
 }
 .girls .fixed-header-spacer{
   display:none ;
@@ -11715,21 +11826,27 @@ select {
     float: left;
     margin-left:30px;
     padding:0;
+    background:transparent;
   }
   .fullscreen-item .container{
     padding-left:30px;
     padding-right:30px;
   }
-}
-.caption-wrap p{
-  margin-bottom:15px;
-}
-.fullscreen-item h3{
-  font-family:"adobe-text-pro", serif;
-  font-style:italic;
-  text-transform: none;
-  font-size:30px; 
-  margin-bottom:20px;
+  .fullscreen-item .caption{
+      text-align:left;
+  }
+  .fullscreen-item .caption-wrap p{
+      font-size:16px;
+  }
+  .fullscreen-item h3{
+      font-size:30px; 
+      margin-top:0px;
+      text-align:left;
+  }
+  .fullscreen-item .hero-text .caption-wrap{
+    padding-left:0px;
+    padding-right:0px;
+  }
 }
 .slideshow-fullscreen .owl-prev{
   background-image: url(../images/prev-large.png);
@@ -11784,7 +11901,6 @@ select {
   vertical-align: middle;
   height:100%;
 }
-
 
 /* ============================================ *
  * simple grid

@@ -25,7 +25,14 @@
 		ctr++;
 	})
 	$j('.toggle-content').on('click', function(){
-		var ans = $j(this).find(".faq-answer");
+		//var ans = $j(this).find(".faq-answer");
+		$j('.toggle-content').not(this).removeClass('expanded');
+		$j(this).toggleClass('expanded');
+		/*
+		ans.slideToggle('fast',function(){
+			$j('expanded').removeClass('expanded').slideToggle();
+		})
+
 		if(ans.hasClass("expanded")){
 			return;
 		}
@@ -33,7 +40,10 @@
 		$j(".expanded").slideUp().removeClass("expanded");
 		ans.slideDown().addClass("expanded");
 		ans.parent().addClass("expanded");
+		*/
 	})
+
+
 	/*
 	//reserve for possible use
 	function windowResize(){
