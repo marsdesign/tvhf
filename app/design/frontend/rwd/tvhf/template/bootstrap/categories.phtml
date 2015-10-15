@@ -11,9 +11,9 @@ if (count($_categories) > 0):
         $i++;
         ?>
 
-
             <div class="section-shop section-shop-<?php echo $i;?>">
             	<div class="shop-image">
+            		<a href="<?php echo $_helper->getCategoryUrl($_category) ?>">
 				<?php
 				    $_imgHtml   = '';
 				    if ($_imgUrl = $_category->getImageUrl()) {
@@ -21,13 +21,14 @@ if (count($_categories) > 0):
 				    }
 				    echo $_imgHtml;
 				?>
+					</a>
 				</div>
 				<div class="text-wrap">
 					<div class="caption-wrap">
 						<div class="caption">
 		                	<h3><a href="<?php echo $_helper->getCategoryUrl($_category) ?>"><?php echo $_category->getName() ?></a></h3>
-		                	<?php echo $_category->getDescription() ?><br />
-		                	<a href="<?php echo $_helper->getCategoryUrl($_category) ?>" class="more">Shop Now <i class="fa fa-angle-right"></i></a>
+		                	<?php echo $_category->getDescription() ?>
+		                	<div class="more-link"><a href="<?php echo $_helper->getCategoryUrl($_category) ?>" class="more">Shop Now <i class="fa fa-angle-right"></i></a></div>
 		                </div>
                 	</div>
             	</div>

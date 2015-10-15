@@ -25,7 +25,9 @@
 			<div class="video-wrap">
 		        <div class="video">
 	            	<a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">
-						<div class="video-play"></div>
+						<div class="video-play">
+							<div class="video-play-triangle"></div>
+						</div>
 	            	</a>
 	            	<img src="<?php echo $_image;?>" alt="<?php echo $_title;?>">
 		        </div>
@@ -34,7 +36,7 @@
 			        	<div class="video-center">
 	                    <h3><?php echo $_title;?></h3>
 	                    <?php echo $_desc;?>
-	                    <a class="button-hollow video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">watch now</a>
+	                    <a class="button-hollow video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">watch now <i class="fa fa-angle-right"></i></a>
 	                	</div>
                 	</div>
                 </div>

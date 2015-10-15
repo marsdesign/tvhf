@@ -605,7 +605,7 @@ input[title="Street Address"]{
 .checkout-onepage-index select{
 }
 .checkout-onepage-index select {
-    height: 34px;
+    height: 40px;
     padding: 0px 8px;
     font-size: 15px;
 	margin-top:0px;
@@ -654,6 +654,8 @@ div.field label[for="billing:country_id"]::after{
 	font-size:14px;
 	background:#f2f2f2;
 	color:#595a5b;
+	font-weight: 100;
+	letter-spacing:1px;
 }
 .opc .section .step-title {
 	padding:0px 20px;
@@ -825,9 +827,11 @@ ul.form-list{
     margin-bottom: 0px;
     padding: 20px;
 }
+/*
 .input-box {
     overflow: hidden;
 }
+*/
 .checkout-agreements .agreement-content{
 	display:none;
 }
@@ -838,7 +842,7 @@ ul.form-list{
 	display:none;
 }
 .checkout-onepage-index .opc .buttons-set {
-    padding: 20px 30px 0px 30px;
+    padding: 20px 0 0 0;
 }
 .monkey-additional-lists{
 	display:none;
@@ -918,122 +922,7 @@ ul.form-list{
 }
 
 
-/*BLOG*/
-.blog-cat-view .postDetails,
-.blog-post-view .postDetails,
-.blog-index-list .postDetails{
-	display:none;
-}
-.blog-cat-view .toolbar,
-.blog-post-view .toolbar,
-.blog-index-list .toolbar{
-	display:none;
-}
-.blog-cat-view .postTitle,
-.blog-post-view .postTitle,
-.blog-index-list .postTitle {
-    border-bottom: none;
-}
-a.aw-blog-read-more{
-	color:#a4a9ab;
-	background:#a4a9ab;
-	padding:0px 10px;
-	height:25px;
-	line-height:25px;
-	display:inline-block;
-	font-size:11px;
-	position:relative;
-	overflow:hidden;
-	width:127px;
-}
-a.aw-blog-read-more:before{
-	content:"CONTINUE READING";
-	display:inline-block;
-	vertical-align:middle;
-	color:#fff;
-}
-a.aw-blog-read-more:after{
-	content:"";
-	display:inline-block;
-	background:url(../images/tiny-right-arrow-white.jpg) no-repeat center center;
-	margin-left:5px;
-	width:7px;
-	height:10px;
-	position:absolute;
-	right:10px;
-	top:8px;
-}
-.postTitle h2 {
-	color:#424444;
-}
-.postTitle h3 {
-	color:#808282;
-}
-.postContent,
-.postContent p{
-	color:#828282;
-	font-weight:400;
-	font-size:14px;
-	line-height:20px;
-}
-.postContent img:first-child{
-	display:none;
-}
-.blog-image{
-	margin:0 0 40px 0;
-}
-.blog-image img{
-	border:1px solid #ccc;
-	width:100%;
-	height:auto;
-}
-.blog-cat-view .col-main,
-.blog-post-view .col-main,
-.blog-index-list .col-main{
-	width:60%;
-	float:left;
-}
-.blog-cat-view .col-right, .blog-post-view .col-right, .blog-index-list .col-right {
-    width: 40%;
-    float: left;
-    padding-left: 60px;
-}
-.blog-cat-view .block-title,
-.blog-post-view .block-title{
-	display:none;
-}
-.block-blog{
-	padding-top:62px;
-}
-.block-blog ul li {
-    margin-left: 0px !important;
-}
-.block-blog ul li a{
-	color:#c0c0c0;
-	font-size:14px !important;
-}
-.menu-tags h5, .menu-categories h5, .menu-recent h5 {
-    color:#777;
-	font-size:14px;
-}
-.block.block-blog .block-title{
-	display:none;
-}
-.col-right .block.block-blog .block-content > div{
-	margin:0 0 30px 0;
-	padding:0;
-}
-.postWrapper p {
-    margin: 0px 0px 1.5em;
-}
-.blog-post-view .page-title{
-	position:relative;
-}
-.blog-post-view .page-title .back-button{
-	position:absolute;
-	top:10px;
-	right:0;
-}
+
 
 
 
@@ -1086,9 +975,6 @@ div.sizing-link{
 	display:block;
 	margin-left:-15px;
 }
-#checkout-step-login button{
-	margin-left:-30px;
-}
 #checkout-step-login p.description{
 	float:none;
 }
@@ -1100,6 +986,8 @@ div.sizing-link{
 #checkout-step-login h3 {
     color: #888;
 	font-size:16px;
+    font-weight: 100;
+    letter-spacing: 1px;
 }
 #checkout-step-login a {
     color: #888;
