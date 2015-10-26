@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bootstrap_Sendfriend>
+            <version>1.1.0</version>
+        </Bootstrap_Sendfriend>
+    </modules>
+    <frontend>
+        <routers>
+            <sendfriend>
+                <args>
+                    <modules>
+                        <Bootstrap_Sendfriend before="Mage_Sendfriend">Bootstrap_Sendfriend</Bootstrap_Sendfriend>
+                    </modules>
+                </args>
+            </sendfriend>
+        </routers>
+    </frontend>   
+</config> 

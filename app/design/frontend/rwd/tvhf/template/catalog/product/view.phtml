@@ -74,23 +74,19 @@ function getVideoId($v){
                     <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
                 </div>
                 <?php echo $this->getChildHtml('media') ?>
-                <div class="ssi" style="display:none">
-                    <span class='st_facebook_hcount' displayText='Facebook'></span>
-                    <span class='st_twitter_hcount' displayText='Tweet'></span>
-                    <span class='st_googleplus_hcount' displayText='Google +'></span>
-                    <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
-                    <span class='st_pinterest_hcount' displayText='Pinterest'></span>
-                    <span class='st_email_hcount' displayText='Email'></span>
+                <div class="social-share-wrap">
+                    <h3 class="ssi-title">SHARE</h3>
+                    <div id="social-share">
+                      <div id="facebook" data-url="<?php echo $_product->getProductUrl(); ?>" data-text="Share on Facebook" data-title="Like"></div>
+                      <div id="twitter" data-url="<?php echo $_product->getProductUrl(); ?>" data-text="Share on Twitter" data-title="Tweet"></div>
+                      <div id="googleplus" data-url="<?php echo $_product->getProductUrl(); ?>" data-text="Share on Google+" data-title="+1"></div>
+                      <div id="pinterest" data-url="<?php echo $_product->getProductUrl(); ?>" data-text="Pin it on Pinterest" data-title="Pin" data-media="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>"></div>
+                      <?php if ($this->canEmailToFriend()): ?>
+                          <div id="email"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" class="link-email-friend" title="<?php echo $this->__('Email to a Friend') ?>"><i class="fa fa-envelope lighter" style="pointer-events: none;width:32px"></i></a></div>
+                      <?php endif; ?>
+                    </div>
                 </div>
-                <div class="social-sharing-icons">
-                	<h3 class="ssi-title">SHARE</h3>
-                    <span data-icon='st_facebook_hcount'><i class="fa fa-facebook"></i><span class="counter"></span></span>
-                    <span data-icon='st_twitter_hcount'><i class="fa fa-twitter lighter"></i><span class="counter"></span></span>
-                    <span data-icon='st_googleplus_hcount'><i class="fa fa-google-plus"></i><span class="counter"></span></span>
-                    <span data-icon='st_linkedin_hcount'><i class="fa fa-linkedin"></i><span class="counter"></span></span>
-                    <span data-icon='st_pinterest_hcount'><i class="fa fa-pinterest"></i><span class="counter"></span></span>
-                    <span data-icon='st_email_hcount' style="width:32px"><i class="fa fa-envelope lighter" style="pointer-events: none;width:32px"></i></span>
-                </div>
+
             </div>
 
             <div class="product-shop">
@@ -304,34 +300,19 @@ if (in_array($ext, $supported_image)) {
 	});
 // ]]>
 </script>
-<script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "d8575cd3-d713-44e6-bb2a-bfbdcec3bb44", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <script>
-// <![CDATA[
-var ssi_int = setInterval(function(){
-	if($j('.st_facebook_hcount .stBubble_hcount').html()!=undefined && $j('.st_twitter_hcount .stBubble_hcount').html()!=undefined && $j('.st_googleplus_hcount .stBubble_hcount').html()!=undefined && $j('.st_linkedin_hcount .stBubble_hcount').html()!=undefined && $j('.st_pinterest_hcount .stBubble_hcount').html()!=undefined && $j('.st_email_hcount .stBubble_hcount').html()!=undefined){
-		if($j('.st_facebook_hcount .stBubble_hcount').html().trim() != "" && $j('.st_twitter_hcount .stBubble_hcount').html().trim() !="" && $j('.st_googleplus_hcount .stBubble_hcount').html().trim() !="" && $j('.st_linkedin_hcount .stBubble_hcount').html().trim() !="" && $j('.st_pinterest_hcount .stBubble_hcount').html().trim() !="" && $j('.st_email_hcount .stBubble_hcount').html().trim() !=""){
-			clearInterval(ssi_int);
-			$j(".social-sharing-icons").slideDown();
-			$j(".social-sharing-icons > span").each(function(){
-				var src = $j("."+$j(this).data("icon"));
-				if($j(this).data("icon")=="st_email_hcount"){
-					$j(this).append($j("."+$j(this).data("icon")));
-				}else{
-					$j(this).find("span.counter").html(src.find(".stBubble_hcount").html());	
-				}
-			});
-			$j(".social-sharing-icons > span").click(function(){
-				if($j(this).data("icon")=="st_email_hcount"){
-				}else{
-					$j("."+$j(this).data("icon")+" .stButton").trigger("click");	
-				}
-			});
-		}
-	}
-	
-},100);
-// ]]>
+
+  $j('#email a').click(function( event ) {
+    event.preventDefault();
+    var url2 = $j(this).attr('href'); 
+    popWindow(url2, 'email', '620', '430');
+  });
+
+  function popWindow(url, title, w, h) {
+    var left = (screen.width/2)-(w/2);
+    var top = (screen.height/2)-(h/2)-50;
+    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no,, width='+w+', height='+h+', top='+top+', left='+left);
+  }
+
 </script>
 

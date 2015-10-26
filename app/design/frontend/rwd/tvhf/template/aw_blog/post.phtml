@@ -44,6 +44,8 @@
 
     <div class="postContent std"><?php echo $post->getPostContent(); ?></div>
 
+
+    <div class="blog-post-footer">
     <div class="back-button">
         <button onclick="history.back();" class="button" title="<?php echo $this->__('Back') ?>" type="button">
             <span>
@@ -52,30 +54,8 @@
         </button>
     </div>
 
-    <!-- social also see below -->
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <div class="addthis_sharing_toolbox"></div>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55428ec0429654f9" async="async"></script>
-
-    <div class="ssi" style="display:none">
-        <span class='st_facebook_hcount' displayText='Facebook'></span>
-        <span class='st_twitter_hcount' displayText='Tweet'></span>
-        <span class='st_googleplus_hcount' displayText='Google +'></span>
-        <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
-        <span class='st_pinterest_hcount' displayText='Pinterest'></span>
-        <span class='st_email_hcount' displayText='Email'></span>
+    <?php echo $this->getBookmarkHtml($post) ?>
     </div>
-    <div class="social-sharing-icons">
-        <h3 class="ssi-title">SHARE</h3>
-        <span data-icon='st_facebook_hcount'><i class="fa fa-facebook"></i><span class="counter"></span></span>
-        <span data-icon='st_twitter_hcount'><i class="fa fa-twitter lighter"></i><span class="counter"></span></span>
-        <span data-icon='st_googleplus_hcount'><i class="fa fa-google-plus"></i><span class="counter"></span></span>
-        <span data-icon='st_linkedin_hcount'><i class="fa fa-linkedin"></i><span class="counter"></span></span>
-        <span data-icon='st_pinterest_hcount'><i class="fa fa-pinterest"></i><span class="counter"></span></span>
-        <span data-icon='st_email_hcount' style="width:32px"><i class="fa fa-envelope lighter" style="pointer-events: none;width:32px"></i></span>
-    </div>
-    <!-- end social -->
 
 </div>
 

@@ -860,7 +860,7 @@ ul.form-list{
 }
 /*FAQ*/
 .faq .std h3{
-	font-size:12px;
+	font-size:13px;
 	color:#767676;
 	cursor:pointer;
 }
@@ -872,10 +872,12 @@ ul.form-list{
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+  font-size:14px;
+    overflow: auto;
+    overflow-x:hidden;
 }
 .expanded .faq-answer{
 	max-height:300px;
-	overflow:scroll;
 }
 .faq .left-group,.faq .right-group{
 	width:50%;

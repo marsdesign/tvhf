@@ -23,12 +23,25 @@
  * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
  * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
  */
-?> <?php $posts = $this->getPosts(); ?>
+?> 
+<div class="page-title">
+    <h1><?php echo $this->__('Blog: ');?><?php echo $this->getCategory()->getTitle();?></h1>
+</div>
+<?php $posts = $this->getPosts(); ?>
 <?php if (count($posts)): ?>
  <?php echo $this->getChildHtml('aw_blog_comments_toolbar'); ?>
     <?php foreach ($posts as $post): ?>
+    <?php
+        // get first image from shortcontent 
+    preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $_blogImages); 
+    if(is_array($_blogImages)){
+        $_blogImage = $_blogImages[0][0];
+    }
+    ?>
         <div class="postWrapper">
-	        <div class="blog-image"><?php preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $result); echo is_array($result[0])?$result[0][0]:'' ; ?></div>
+            <?php if(!empty($_blogImage)){ ?>
+            <div class="blog-image"><a href="<?php echo $post->getAddress(); ?>" ><?php echo $_blogImage;?></a></div>
+            <?php } ?>
             <div class="postTitle">
                 <h2><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></h2>
 		        <h3><?php echo date('l, F j, Y',strtotime($post->getCreatedTime())); ?></h3>

@@ -32,16 +32,25 @@
     <h1><?php echo $this->__('Blog');?></h1>
 </div>
 <?php echo $this->getChildHtml('aw_blog_comments_toolbar'); ?>
-<?php foreach ($posts as $post): ?>
+<?php foreach ($posts as $post):?>
+<?php
+// get first image from shortcontent 
+preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $_blogImages); 
+if(is_array($_blogImages)){
+    $_blogImage = $_blogImages[0][0];
+}
+?>
     <div class="postWrapper">
-        <div class="blog-image"><?php preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $result); echo is_array($result[0])?$result[0][0]:'' ; ?></div>
+        <?php if(!empty($_blogImage)){ ?>
+        <div class="blog-image"><a href="<?php echo $post->getAddress(); ?>" ><?php echo $_blogImage;?></a></div>
+        <?php } ?>
         <div class="postTitle">
             <h2><a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></h2>
             <h3><?php echo date('l, F j, Y',strtotime($post->getCreatedTime())); ?></h3>
         </div>
         <div class="postContent std"><?php echo $post->getPostContent(); ?></div>
 
-        <?php echo $this->getBookmarkHtml($post) ?>
+        <?php // echo $this->getBookmarkHtml($post) ?>
 
     </div>
 <?php endforeach; ?>
