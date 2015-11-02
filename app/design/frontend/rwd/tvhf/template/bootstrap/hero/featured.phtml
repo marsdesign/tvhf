@@ -1,8 +1,9 @@
 
+<div class="hero-logo" id="hero-logo"></div>  
 <?php if($this->getItems()->getSize()){ ?>
-
-    <?php foreach($this->getItems() as $_item): 
-
+<div class="hero-background">
+  <div class="hero-slideshow<?php if($this->getItems()->getSize() == 1){ ?> active<?php } ?>">
+  <?php foreach($this->getItems() as $_item): 
         $img        = $_item->getImage();
         $img_src    = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $img;
 
@@ -10,11 +11,12 @@
         $img_mobile_src    = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $img_mobile;
         
         $link       = $_item->getLink();
-    ?>
-    <?php endforeach;?>
+  ?>
+  <div class="fullscreen-item" style="background-image:url('<?php echo $img_src;?>');"></div>
+  <?php endforeach;?>
+  </div>
+</div>
 <?php } ?>
-<div class="hero-logo" id="hero-logo"></div>     
-<div class="hero-background" style="background-image:url('<?php echo $img_src;?>');"></div> 
 <div class="hero-space"></div>
 <div id="logo-trigger"></div>
 <script type="text/javascript">
@@ -49,4 +51,18 @@
             }
 
         });     
+
+<?php if($this->getItems()->getSize() > 1){ ?>
+$j(".hero-slideshow").owlCarousel({
+    pagination: false,
+    navigation: false,
+    singleItem: true,
+    slideSpeed:600,
+    autoPlay: 5000,
+    rewindNav: true,
+    stopOnHover: true,
+    addClassActive: true,
+    transitionStyle: "fade"
+});
+<?php } ?>
 </script>

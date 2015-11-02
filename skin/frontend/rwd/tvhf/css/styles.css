@@ -10716,8 +10716,17 @@ a:focus {
     left:0;
     bottom:0;
     right:0;
-    background-size:cover
+    background-size:cover;
   }
+  .hero-background .hero-slideshow,
+  .hero-background .owl-wrapper,
+  .hero-background .owl-item {
+       height: 100%;   
+  }
+  .hero-background .owl-wrapper-outer {
+      height: 100% !important;    
+  }
+
   .hero-space {
     height:-moz-calc(100% - 80px);
     height:-webkit-calc(100% - 80px);
