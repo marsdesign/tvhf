@@ -11238,9 +11238,20 @@ a:focus {
 .cms-contact .image-right,
 .cms-returns .image-right,
 .cms-shipping .image-right{
-  background-image:url(../images/girls/About.jpg);
   background-repeat: no-repeat;
   background-position: left top;
+}
+.cms-about .image-right{
+  background-image:url('/media/wysiwyg/page-backgrounds/about.jpg');
+}
+.cms-contact .image-right{
+  background-image:url('/media/wysiwyg/page-backgrounds/contact.jpg');
+}
+.cms-returns .image-right{
+  background-image:url('/media/wysiwyg/page-backgrounds/returns.jpg');
+}
+.cms-shipping .image-right{
+  background-image:url('/media/wysiwyg/page-backgrounds/shipping.jpg');
 }
 
 @media (max-width: 770px){
