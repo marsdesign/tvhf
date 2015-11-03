@@ -11434,6 +11434,28 @@ a.sort-by-switcher.sort-by-switcher i {
   font-weight:100 !important;
   font-size:48px !important;
 }
+.product-image a div{
+  position:relative;
+}
+.magnify{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:url('../images/magnify.png') no-repeat 0 0;
+  width:20px;
+  height:20px;
+  display:inline-block;
+  cursor:pointer;
+  opacity:1;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.magnify:hover{
+  opacity:.5;
+}
 
 /* -------------------------------------------- *
  * Upsell Products

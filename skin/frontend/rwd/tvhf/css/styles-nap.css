@@ -1016,11 +1016,14 @@ div.sizing-link{
 }
 /*Layered Navigation*/
 
+/*
 dl#narrow-by-list > dt,
 dl#narrow-by-list > dd.last {
     display:none;
 }
-dl#narrow-by-list dd a, dl#narrow-by-list dd {
+*/
+dl#narrow-by-list dd a, 
+dl#narrow-by-list dd {
     border: none;
     padding: 0px;
     margin: 0px;
@@ -1031,6 +1034,9 @@ dl#narrow-by-list dd a, dl#narrow-by-list dd {
 }
 dl#narrow-by-list dd a:hover{
 	color:#444;
+}
+.category-products{
+	position:relative;
 }
 .block-layered-nav {
     width: 200px;
