@@ -279,6 +279,17 @@ if (in_array($ext, $supported_image)) {
     </div>
 </div>
 
+<div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="image">        
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="">
+            </div>
+        </div>
+        <a href="#" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+    </div>
+</div>
+
 <script>
 // <![CDATA[
 
@@ -298,6 +309,16 @@ if (in_array($ext, $supported_image)) {
 	$j(".product-view .product-options dd .input-box").mouseenter(function(){
 		$j(this).find("select").trigger("click");
 	});
+
+    // set iframe url on click
+    $j('.zoom-image').on('click', function(){
+
+        var image = $j(this).data("image"),
+            modal = $j(this).data("target");
+
+        $j(modal+' img').attr('src', image); 
+    })
+
 // ]]>
 </script>
 <script>

@@ -3509,6 +3509,11 @@ a.skip-link {
     padding: 0 15px 0 25px;
     text-align: left;
     line-height: 30px;
+    text-transform: uppercase;
+    font-family: "nimbus-sans-extended", 'sans-serif';
+    color: #444;
+    font-weight: 400;
+    font-size:12px;
   }
 
   #header-account li:last-child a,
@@ -3628,6 +3633,11 @@ a.skip-link {
   .nav-primary a.level0,
   .nav-primary a {
     line-height: 36px;
+    text-transform: uppercase;
+    font-family: "nimbus-sans-extended", 'sans-serif';
+    font-weight: 400;
+    font-size:12px;
+    color:#444;
   }
   .nav-primary li.level0 ul {
     display: none;
@@ -11406,6 +11416,24 @@ a.sort-by-switcher.sort-by-switcher i {
 }
 
 
+/* image zoom ==================== */
+@media(min-width:768px){
+  #image-modal .modal-dialog{
+    width:90%;
+    max-width:1200px;
+  }
+}
+#image-modal img{
+  width:100%;
+  height:auto;
+}
+#image-modal .modal-body{
+  padding:0;
+}
+#image-modal .close{
+  font-weight:100 !important;
+  font-size:48px !important;
+}
 
 /* -------------------------------------------- *
  * Upsell Products

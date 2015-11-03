@@ -40,10 +40,13 @@
     <div class="product-image-slideshow">
         <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
             <?php if ($this->isGalleryImageVisible($_image)): ?>
+            <div>
+            <a class="zoom-image" data-toggle="modal" data-target="#image-modal" data-image="<?php echo  $this->getGalleryImageUrl($_image); ?>">
             <img id="image-<?php echo $i; ?>"
                  class="gallery-image"
                  src="<?php echo $this->getGalleryImageUrl($_image); ?>"
-                 data-pop-image="<?php echo  $this->getGalleryImageUrl($_image); ?>" />
+                 data-pop-image="<?php echo  $this->getGalleryImageUrl($_image); ?>" /></a>
+            </div>
             <?php endif; ?>
         <?php $i++; endforeach; ?>
     </div>
@@ -52,6 +55,7 @@
 
 <?php echo $this->getChildHtml('after'); ?>
 
+<?php if($this->getGalleryImages()->getSize() > 1){ ?>
 <script type="text/javascript">
     $j(".product-image-slideshow").owlCarousel({
         pagination: false,
@@ -64,3 +68,4 @@
 
     });
 </script>
+<?php } ?>
