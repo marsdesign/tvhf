@@ -1012,8 +1012,89 @@ div.sizing-link{
 	font-family: "nimbus-sans-extended",sans-serif;
 }
 @media(min-width:771px){
-	font-size:10px;
-}
+
+	.category-products{
+		position:relative;
+	}
+	.filters{
+		position:absolute;
+		top:17px;
+		left:0;
+		z-index:1;
+	}
+	.filters .block-layered-nav{
+		width:200px;
+		position:relative;
+		border:solid 1px #fff;
+	}
+	.filters .block-layered-nav .block-content > dl > dt{
+		border-bottom:none;
+		background:transparent;
+		border:none;
+		padding:0;
+	}
+	.filters .block-layered-nav .block-content > dl > dd{
+		padding:5px 0 0 0;
+		border:none;
+	}
+	.filters .block-layered-nav dl dd ol > li > span, 
+	.filters .block-layered-nav dl dd ol > li > a{
+		font-size:13px;
+		padding:5px 0;
+	    font-family: 'nimbus-sans-extended', sans-serif;
+	    text-transform:uppercase;
+	}
+	.filters .block-layered-nav .block-content{
+		position: absolute;
+    	width: 100%;
+    	z-index: 10;
+    	background: #fff;
+    	display:none;
+    	border:solid 1px #ccc;
+    	padding:7px;
+	}
+	.filters .block-title strong{
+		font-size:13px;
+	}
+	.filters .block-title:hover{
+		cursor:pointer;
+	}
+	.filters .block.block-layered-nav:hover .block-content{
+		display:block;
+	}
+	.filters .block-layered-nav .block-title strong:after{
+		content:"";
+		width:13px;
+		height:7px;
+		display:inline-block;
+		margin-left:5px;
+		background:url(../images/filter-arrow.jpg) no-repeat center center;
+		vertical-align:middle;
+	}
+
+	.filters .block-layered-nav .actions{
+		padding:0;
+		margin:0;
+		text-align:left;
+		text-transform:uppercase;
+		font-size:12px;
+	}
+	.filters .block-layered-nav .actions a{
+		padding:0;
+		margin:0;
+		float:none;
+	}
+	.block-layered-nav .currently .block-subtitle{
+		font-size:12px;
+	}
+	.filters .block-layered-nav .currently ol{
+		font-size:13px;
+		padding:0;
+	}
+	.currently .btn-remove{
+		color:#000;
+	}
+
 /*Layered Navigation*/
 
 /*
@@ -1021,7 +1102,7 @@ dl#narrow-by-list > dt,
 dl#narrow-by-list > dd.last {
     display:none;
 }
-*/
+
 dl#narrow-by-list dd a, 
 dl#narrow-by-list dd {
     border: none;
@@ -1106,6 +1187,10 @@ dl#narrow-by-list dd a:hover{
     padding-left: 0px;
     margin-bottom: 0px;
 }
+*/
+}
+
+
 .products-list .action .button, .products-grid .actions .button {
     height:0;
 	width:0;

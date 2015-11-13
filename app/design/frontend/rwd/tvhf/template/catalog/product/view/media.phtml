@@ -41,12 +41,12 @@
         <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
             <?php if ($this->isGalleryImageVisible($_image)): ?>
             <div>
-            <a class="zoom-image" data-toggle="modal" data-target="#image-modal" data-image="<?php echo  $this->getGalleryImageUrl($_image); ?>">
+            <a class="zoom-image" data-toggle="modal" data-target="#image-modal" data-image="<?php echo  $this->getGalleryImageUrl($_image); ?>" data-backdrop="static">
             <span class="magnify"></span>
             <img id="image-<?php echo $i; ?>"
                  class="gallery-image"
-                 src="<?php echo $this->getGalleryImageUrl($_image); ?>"
-                 data-pop-image="<?php echo  $this->getGalleryImageUrl($_image); ?>" /></a>
+                 src="<?php echo $this->getGalleryImageUrl($_image); ?>" />
+            </a>
             </div>
             <?php endif; ?>
         <?php $i++; endforeach; ?>
