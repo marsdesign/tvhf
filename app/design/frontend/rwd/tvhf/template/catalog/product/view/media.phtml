@@ -37,11 +37,15 @@
     $_helper = $this->helper('catalog/output');
 ?>
 <div class="product-image">
+    <div id="zoom-window">
+        <span class="zoom-close">&times;</span>
+        <img src="">
+    </div>
     <div class="product-image-slideshow">
         <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
             <?php if ($this->isGalleryImageVisible($_image)): ?>
             <div>
-            <a class="zoom-image" data-toggle="modal" data-target="#image-modal" data-image="<?php echo  $this->getGalleryImageUrl($_image); ?>" data-backdrop="static">
+            <a class="zoom-image" data-image="<?php echo $this->getGalleryImageUrl($_image); ?>">
             <span class="magnify"></span>
             <img id="image-<?php echo $i; ?>"
                  class="gallery-image"
@@ -70,3 +74,16 @@
     });
 </script>
 <?php } ?>
+<script type="text/javascript">
+    // set iframe url on click
+    $j('.zoom-image').on('click', function(){
+        var image = $j(this).data("image");
+        var zoom = $j('#zoom-window img');
+        $j(zoom).attr('src', image);
+        $j('.product-view').addClass('zoomed');
+    })
+    $j('#zoom-window img, .zoom-close').on('click', function(){
+        $j('.product-view').removeClass('zoomed');
+        $j('#zoom-window img').attr('src','');
+    })
+</script>

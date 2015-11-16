@@ -310,14 +310,6 @@ if (in_array($ext, $supported_image)) {
 		$j(this).find("select").trigger("click");
 	});
 
-    // set iframe url on click
-    $j('.zoom-image').on('click', function(){
-
-        var image = $j(this).data("image"),
-            modal = $j(this).data("target");
-
-        $j(modal+' img').attr('src', image); 
-    })
 
 // ]]>
 </script>
