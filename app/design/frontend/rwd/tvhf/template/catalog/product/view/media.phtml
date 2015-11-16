@@ -78,12 +78,14 @@
     // set iframe url on click
     $j('.zoom-image').on('click', function(){
         var image = $j(this).data("image");
-        var zoom = $j('#zoom-window img');
-        $j(zoom).attr('src', image);
+        var imageTag = '<img src="' + image + '" />';
+        var zoom = $j('#zoom-window');
+        $j(zoom).append(imageTag);
         $j('.product-view').addClass('zoomed');
     })
     $j('#zoom-window img, .zoom-close').on('click', function(){
         $j('.product-view').removeClass('zoomed');
         $j('#zoom-window img').attr('src','');
+        $j('#zoom-window img').remove();
     })
 </script>
