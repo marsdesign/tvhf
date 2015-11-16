@@ -9217,6 +9217,7 @@ div.paypal-logo span > img {
   position: relative;
   text-align: center;
   background: #f9f9f9;
+  padding-bottom:10px;
 }
 .header-minicart .minicart-actions .checkout-button {
   min-width: 145px;
@@ -14458,4 +14459,54 @@ h3.ssi-title{
   .magnify{
     display:block;
   }
+}
+
+
+ /*  zoom ============================================ */
+.paypal-express-review .info-set h2.legend{
+  font-size:18px;
+}
+.paypal-express-review .info-set h2.legend a,
+.box-title h3 a{
+    font-size: 10px;
+    margin-left:15px;
+}
+.paypal-express-review .info-set h2.legend .separator,
+.box-title h3 .separator{
+  display:none;
+}
+.paypal-express-review .info-set{
+  margin-bottom:20px;
+  padding:15px;
+  border:solid 1px #ddd;
+}
+.paypal-express-review .box-title h3{
+  font-size:14px;
+}
+.checkout-agreements{
+  background:#ececec;
+  padding:30px;
+  margin:0;
+}
+.checkout-agreements p.agree{
+  float:left;
+  padding-left:0;
+}
+.checkout-agreements p{
+  padding-left:30px;
+  margin-bottom:15px;
+}
+
+.paypal-express-review #review-buttons-container{
+  padding: 0 20px 20px 20px;
+  background: #ececec;
+  margin-bottom: 20px;
+}
+.paypal-express-review #review-buttons-container .btn-checkout{
+  float:left;
+  margin-right:5px;
+}
+.checkout-types.bottom .paypal-or{
+  text-align:center;
+  padding:0;
 }
