@@ -14510,3 +14510,46 @@ h3.ssi-title{
   text-align:center;
   padding:0;
 }
+
+
+ /*  affiliate tweaks ============================================ */
+.affiliate-page .page-header{
+  border-bottom: solid 1px #dbdbdb!important;
+  margin: 0 auto;
+  padding-bottom: 0px;
+}
+.affiliate-page .affiliate-navigation{
+  border:none!important;
+}
+.affiliate-page .affiliate-navigation li a{
+    padding: 7px 4px!important;
+    border-bottom: solid 1px #ddd !important;
+    display: block;
+    color: #333!important;
+    font-weight: 400 !important;
+    font-family: "nimbus-sans-extended",sans-serif !important;
+    text-transform: uppercase !important;
+    font-size: 12px !important;
+}
+.affiliate-page .affiliate-navigation li a:hover{
+  color:#999;
+}
+.affiliate-page .navigation-content{
+    border: solid 2px #ddd;
+    padding: 0 7px;
+}
+.navbar-collapse-aff .block-title-aff, .navbar-collapse-aff .block-title-aff h2, .affiliate-page .aff-main-content .aff-title h2, .affiliate-page .aff-main-content .aff-title h1,
+.affiliate-page .aff-main-content .aff-title h2, .affiliate-page .aff-main-content .aff-title h1{
+  background:none!important;
+  padding-left:0!important;
+  margin: 0!important;
+  font-weight: 100!important;
+  font-style: normal!important;;
+  text-rendering: optimizeLegibility;
+  font-family: 'nimbus-sans-extended', sans-serif!important;;
+  text-transform: uppercase!important;
+  color: #414042!important;
+}
+.affiliate-page .affiliate-navigation ul li a:hover, .affiliate-page .affiliate-navigation ul li a:focus, .affiliate-page .affiliate-navigation ul .active a{
+  color: #414042!important;
+}
