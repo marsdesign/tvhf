@@ -188,9 +188,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- product -->
     <catalog_product_view>
-        <reference name="head">
+
+        <reference name="head">        <!--
             <action method="addItem"><type>skin_js</type><name>js/lib/jquery.sharrre.js</name></action> 
-            <action method="addItem"><type>skin_js</type><name>js/lib/jquery.sharrre.config.js</name></action> 
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery.sharrre.config.js</name></action> -->
+            <action method="addItem"><type>skin_js</type><name>js/share.js</name></action> 
         </reference>
         <reference name="content"> 
 
