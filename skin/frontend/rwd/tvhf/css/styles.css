@@ -3239,7 +3239,7 @@ body {
     height:90px;
     display:block;
   }
-  .catalog-category-view .fixed-header-spacer{
+  .catalog-category-view .fixed-header-spacer,{
     height:130px;
   }
   .cms-index-index .fixed-header-spacer{
@@ -10542,6 +10542,9 @@ a:focus {
   }
   .product-peruca-create-your-own .shop-menu{
     display:block;
+  }
+  .product-peruca-create-your-own .fixed-header-spacer,{
+    height:130px;
   }
 }
 .shop-menu ul {
