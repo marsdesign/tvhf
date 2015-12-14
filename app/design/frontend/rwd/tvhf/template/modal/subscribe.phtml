@@ -79,7 +79,7 @@
              			});
              }else{
              	var elem = document.getElementById("newsletterPop");
-				elem.value = "Valid email please";
+				      elem.value = "Valid email please";
              }
        }
        
@@ -90,13 +90,15 @@
        			},2000);
        }
 
-     // var sub = readCookie('subscribePop');
-  	//if(!sub){
-  	//	jQuery(document).ready(function() {
-         		//setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
-  			//createCookie('subscribePop',1,3);
-  	//	});
-  	//}
+
+    /*
+    var sub = readCookie('subscribePop');
+    if(!sub){
+      jQuery(document).ready(function() {
+        setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
+        createCookie('subscribePop',1,3);
+      });
+    }
 
     function createCookie(name,value,days) {
       if (days) {
@@ -118,27 +120,62 @@
       }
       return null;
     }
+    */
+
+    function daysBetween(date1, date2) {
+        // The number of milliseconds in one day
+        var ONE_DAY = 1000 * 60 * 60 * 24
+        // Calculate the difference in milliseconds
+        var difference_ms = Math.abs(date1 - date2)
+        // Convert back to days and return
+        return Math.round(difference_ms/ONE_DAY)
+    }
+
     
-    if (window.location.protocol != "https:"){
-      if (Modernizr.localstorage) {
-      	// use local storage to show pop up only once
-    		if (localStorage.getItem("subpop") === null) {
-    			setTimeout(function() {
-            jQuery("#modal-subscribe").modal('show');
-          }, 3000);
-    			localStorage.setItem('subpop', 1);
-    		}
-	   } else {
-    		// javascript fallback - not in use.
-       		//var sub = readCookie('subscribePop');
-    		//if(!sub){
-    		//	jQuery(document).ready(function() {
-           	//		setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
-    		//		createCookie('subscribePop',1,3);
-    		//	});
-    		//}
-	   }
-	}
+    if (window.location.protocol != "https:") {
+        if (Modernizr.localstorage) {
+            // use local storage to show pop up only once
+            // set today
+            var today = new Date();
+
+            if (localStorage.getItem("subpop") === null) {
+                // if no storage item
+                setTimeout(function() {
+                    jQuery("#modal-subscribe").modal('show');
+                }, 3000);
+                // set storage item today date
+                localStorage.setItem('subpop', today);
+            }else{
+              // we have a storage item - get it
+              var cookie = localStorage.getItem("subpop");
+              // parse into epoch seconds
+              var cookieDate = Date.parse(cookie);
+              // parse today into epoch seconds
+              var todayDate = Date.parse(today);
+              // get the difference in days
+              var days = daysBetween(todayDate,cookieDate);
+              // if greater than = to ten days - redo the process
+              if(days >= 10){
+                setTimeout(function() {
+                    jQuery("#modal-subscribe").modal('show');
+                }, 3000);
+                localStorage.setItem('subpop', today);              
+              }
+            }
+
+        } else {
+            // javascript fallback - not in use.
+            /*
+            var sub = readCookie('subscribePop');
+            if(!sub){
+              jQuery(document).ready(function() {
+                setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
+                createCookie('subscribePop',1,3);
+              });
+            }
+            */
+        }
+    }
   // show modal no matter
   // jQuery("#modal-subscribe").modal('show');
 

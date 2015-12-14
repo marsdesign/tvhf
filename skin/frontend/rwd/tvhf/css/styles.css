@@ -11458,7 +11458,7 @@ a.sort-by-switcher.sort-by-switcher i {
 }
 
 
-/* image zoom ==================== */
+/* image zoom ==================== 
 @media(min-width:768px){
   #image-modal .modal-dialog{
     width:90%;
@@ -11479,25 +11479,7 @@ a.sort-by-switcher.sort-by-switcher i {
 .product-image a div{
   position:relative;
 }
-.magnify{
-  position:absolute;
-  top:20px;
-  right:20px;
-  background:url('../images/magnify.png') no-repeat 0 0;
-  width:20px;
-  height:20px;
-  display:inline-block;
-  cursor:pointer;
-  opacity:1;
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
-}
-.magnify:hover{
-  opacity:.5;
-}
+*/
 
 /* -------------------------------------------- *
  * Upsell Products
@@ -14415,36 +14397,33 @@ h3.ssi-title{
 
 }
 
-
-
  /*  zoom ============================================ */
 .zoom-close{
-    position:absolute;
-    z-index:1;
-    color:#ccc;
-    font-size:50px;
-    top:20px;
-    right:20px;
     display:none;
 }
-.zoom-close:hover{
-    cursor: pointer;
+.zoomed .zoom-close{
+    display:block;
+    padding-right:3px;
+    color:#ccc;
+    font-size:42px;
 }
 .zoomed .product-shop,
 .zoomed .product-description,
 .zoomed .box-up-sell,
-.zoomed .product-image-slideshow{
+.zoomed .product-image-slideshow,
+.zoomed .product-glam-image,
+.zoomed .zoom-open{
  display:none!important;
 }
-.zoomed .zoom-close{
-    display:block;
-}
+
 .zoomed .product-img-box{
     width:100%;
-  -moz-transition: all 300ms ease-in-out;
-  -ms-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    transform-origin: 0 0;
+    padding-right:0;
 }
 .zoomed #zoom-window{
     position:relative;
@@ -14461,17 +14440,55 @@ h3.ssi-title{
 .product-img-box .product-image img{
     max-height:none;
 }
-.magnify{
+
+.zoom-toggle{
   display:none;
+  position:absolute;
+  top:7px;
+  right:16px;
+  z-index:1;
+  cursor:pointer;
+  font-size:30px;
+  line-height:normal;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
+.product-img-box{
+    position:relative;
+}
+.zoom-toggle .zoom-open{
+  background:url('../images/magnify.png') no-repeat 0 0;
+  width:20px;
+  height:20px;
+  display:inline-block;
+  cursor:pointer;
+  opacity:1;
+}
+.zoom-toggle:hover{
+  opacity:.65;
+}
+
 @media (min-width: 768px){
-  .magnify{
-    display:block;
-  }
+    .zoom-toggle{
+        display:block;
+    }
+    .product-img-box{
+        position:relative;
+        padding-right:56px;
+    }
+    .product-img-box .product-image img{
+        cursor:pointer;
+    }
 }
 
 
- /*  zoom ============================================ */
+
+
+
+ /*  paypal ============================================ */
 .paypal-express-review .info-set h2.legend{
   font-size:18px;
 }
@@ -14561,4 +14578,20 @@ h3.ssi-title{
 }
 .affiliate-page .affiliate-navigation ul li a:hover, .affiliate-page .affiliate-navigation ul li a:focus, .affiliate-page .affiliate-navigation ul .active a{
   color: #414042!important;
+}
+
+.affiliate-page .col-main{
+  padding-left:230px;
+}
+.affiliate-page .affiliate-navigation{
+  float:left;
+  width:200px;
+  margin-left:-230px;
+}
+.affiliate-page .affiliate-navigation .block-title-aff{
+  display:none;
+}
+.affiliate-page .aff-main-content{
+  float:right;
+  width:100%;
 }

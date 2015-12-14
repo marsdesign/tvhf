@@ -37,16 +37,17 @@
     $_helper = $this->helper('catalog/output');
 ?>
 <div class="product-image">
-    <div id="zoom-window">
+    <span class="zoom-toggle">
+        <span class="zoom-open"></span>
         <span class="zoom-close">&times;</span>
-        <img src="">
+    </span>
+    <div id="zoom-window">
     </div>
     <div class="product-image-slideshow">
         <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
             <?php if ($this->isGalleryImageVisible($_image)): ?>
             <div>
             <a class="zoom-image" data-image="<?php echo $this->getGalleryImageUrl($_image); ?>">
-            <span class="magnify"></span>
             <img id="image-<?php echo $i; ?>"
                  class="gallery-image"
                  src="<?php echo $this->getGalleryImageUrl($_image); ?>" />
@@ -69,22 +70,39 @@
         rewindNav: true,
         lazyLoad: true,
         navigationText : ["",""],
+        addClassActive: true
 
     });
 </script>
 <?php } ?>
 <script type="text/javascript">
-    // set iframe url on click
-    $j('.zoom-image').on('click', function(){
-        var image = $j(this).data("image");
+
+    $j('.zoom-toggle,.product-image-slideshow img,#zoom-window').on('click', function(){
+        if(isZoomed() === false){
+            var image = $j('.active .zoom-image').data("image");
+            zoom(image);
+        }else{
+            unZoom();
+        }
+
+    })
+    function isZoomed(){
+        var zoomedDiv = $j('.product-view');
+        if(zoomedDiv.hasClass('zoomed')){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function zoom(image){
         var imageTag = '<img src="' + image + '" />';
         var zoom = $j('#zoom-window');
         $j(zoom).append(imageTag);
         $j('.product-view').addClass('zoomed');
-    })
-    $j('#zoom-window img, .zoom-close').on('click', function(){
+    }
+    function unZoom(){
         $j('.product-view').removeClass('zoomed');
         $j('#zoom-window img').attr('src','');
-        $j('#zoom-window img').remove();
-    })
+        $j('#zoom-window img').remove();  
+    }
 </script>

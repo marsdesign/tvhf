@@ -2,6 +2,8 @@
 .modgit/
 .gitignore
 /_notes
+/_server
+/_backup
 
 # OS generated files
 .DS_Store
@@ -39,8 +41,5 @@ Thumbs.db
 /sitemap.xml
 /maintenance.flag
 
-
-# Files to remove
-/.htaccess.sample
-/index.php.sample
-/php.ini.sample
+# sass cache
+.sass-cache/
