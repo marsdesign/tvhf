@@ -5047,7 +5047,6 @@ p.product-name a:hover {
 .product-view .old-price .price-label {
   display: none;
 }
-.product-view .add-to-cart-wrapper,
 .product-view .block-related,
 .product-view .product-collateral {
   width: 50%;
@@ -5066,7 +5065,6 @@ p.product-name a:hover {
   }
 }
 @media only screen and (max-width: 770px) {
-  .product-view .add-to-cart-wrapper,
   .product-view .product-collateral  {
     float: none;
     width: 100%;
@@ -5181,7 +5179,6 @@ p.product-name a:hover {
 }
 
 .product-view .product-shop,
-.product-view .add-to-cart-wrapper,
 .product-view .block-related,
 .product-view .product-collateral  {
   padding-left: 15px;
@@ -5537,7 +5534,6 @@ p.product-name a:hover {
 }
 @media only screen and (max-width: 770px) {
   .product-view .product-shop,
-  .product-view .add-to-cart-wrapper,
   .product-view .block-related,
   .product-img-box,
   .product-view .product-collateral {
@@ -14477,7 +14473,6 @@ h3.ssi-title{
     }
     .product-img-box{
         position:relative;
-        padding-right:56px;
     }
     .product-img-box .product-image img{
         cursor:pointer;

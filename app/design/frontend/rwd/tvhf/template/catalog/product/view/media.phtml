@@ -46,7 +46,7 @@
     <div class="product-image-slideshow">
         <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
             <?php if ($this->isGalleryImageVisible($_image)): ?>
-            <div>
+            <div <?php if($this->getGalleryImages()->getSize() == 1){ ?>class="active"<?php }?>>
             <a class="zoom-image" data-image="<?php echo $this->getGalleryImageUrl($_image); ?>">
             <img id="image-<?php echo $i; ?>"
                  class="gallery-image"
