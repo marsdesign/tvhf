@@ -14595,3 +14595,181 @@ h3.ssi-title{
   float:right;
   width:100%;
 }
+.affiliate-page p{
+  margin-bottom:20px;
+}
+
+.affiliate-page button{
+  background: #414143;
+  display: inline-block;
+  padding: 9px 40px;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: "nimbus-sans-extended",sans-serif;
+  font-weight: 300;
+}
+.affiliate-page button:hover{
+  opacity:0.8;
+  cursor: pointer;
+}
+.affiliate-page button:active{
+  opacity:0.8;
+  color: #FFFFFF;
+}
+.affiliate-page button:focus{
+  opacity:0.8;
+  outline: none;
+  color: #FFFFFF;
+}
+#affiliateplus-sidebar .block.block-list{
+  padding:20px;
+}
+
+.affiliate-page .block-title {
+    position: relative;
+    padding: 0;
+    margin:0;
+    border:none;
+    color:#333;
+    font-weight:bold;
+}
+.fieldset-sources{
+  padding:20px;
+}
+
+.affiliate-page table{
+  margin:20px 0;
+  width:100%;
+  border-top:solid 1px #ccc;
+  border-left:solid 1px #ccc;
+}
+.affiliate-page th,
+.affiliate-page td{
+  border-right:solid 1px #ccc;
+  border-bottom:solid 1px #ccc;
+  padding:10px;
+  vertical-align: top;
+}
+.affiliate-page .form-control,
+.affiliate-page .form-control{
+  width:auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #e0e0e0;
+  font-size: 15px;
+  color:#898989;
+}
+.form-control.status-grid{
+  min-width:150px;
+}
+.affiliate-page table input[name="priority"]{
+  width:40px;
+}
+.from-to-aff{
+  clear:both;
+  overflow:hidden;
+  position:relative;
+  padding-right:30px;
+}
+.from-to-aff > div:nth-child(2n){
+  float:left;
+}
+.from-to-aff input[type="text"]{
+  width:80px;
+}
+.from-to-aff .calender{
+  float:right;
+  width:30px;
+  margin-right:-30px;
+}
+.aff-title{
+  padding-bottom:20px;
+}
+li.wide input#affiliate-page-link{
+  width:365px;
+}
+.affiliate-get-link{
+    border: solid 1px #ccc;
+    padding: 20px;
+}
+.affiliate-get-link .legend{
+  font-size:18px;
+}
+.affiliateplus_form_request{
+  border:solid 1px #ccc;
+  padding:20px;
+  margin-bottom:20px;
+}
+.affiliateplus_form_request .my-blance{
+  margin-bottom:10px;
+}
+.affiliateplus_form_request .request-amount-money{
+  overflow:hidden;
+  clear:both;
+}
+.affiliateplus_form_request .input-blance{
+  float:left;
+}
+.affiliateplus_form_request .request-withdrawal{
+  float:left;
+}
+.statistic-transactions{
+  border:solid 1px #ccc;
+  margin-bottom:20px;
+  overflow:hidden;
+}
+.statistic-transactions p{
+  margin-bottom:0;
+}
+.statistic-transactions .left,
+.statistic-transactions .right{
+  padding:20px;
+  float:left;
+  width:50%;
+}
+
+.nav-tabs{
+  overflow:hidden;
+  clear:both;
+  margin-bottom:10px;
+}
+.nav-tabs > li{
+  float:left;
+  margin-right:3px;
+}
+.nav-tabs > li > a{
+  display:block;
+  border:solid 1px #ccc;
+  background:#ececec;
+  color:#333;
+  padding:7px 15px;
+}
+.affiliateplus-account-edit .form-group{
+  overflow:hidden;
+  clear:both;
+}
+.affiliateplus-account-edit .form-group > div{
+  clear:both;
+  overflow:hidden;
+}
+.affiliateplus-account-edit .form-group > div label{
+  display:inline-block;
+}
+.affiliateplus-account-edit .form-group > div input,
+.affiliateplus-account-edit .form-group > div select{
+  display:block;
+  width:100%;
+  margin-bottom:15px;
+}
+.affiliateplus-account-edit form .legend{
+  border:none;
+}
+

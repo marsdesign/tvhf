@@ -5,9 +5,10 @@
             <action method="addJs">
                 <script>magestore/affiliateplus.js</script>
             </action>
+            <!--
             <action method="addCss">
                 <styleSheet>css/magestore/affiliateplus.css</styleSheet>
-            </action>
+            </action>-->
             <block type="affiliateplus/CheckIframe" name="affiliateplus_checkiframe" template="affiliateplus/checkiframe.phtml"/>
         </reference>
         <reference name="footer_links">
@@ -40,7 +41,9 @@
         </reference>
         <!-- mmc removed mobile slide out navigation duplicate appears at top of page then hidden from after_body_start-->
         <reference name="content">
+            <!--
             <block type="core/template" name="style_config" template="affiliateplus/html/style.phtml"/>
+        -->
             <!-- mmc remove bootstrap <block type="core/template" before="-" name="addbootstrap" template="affiliateplus/html/bootstrap.phtml"/>-->
             <block type="affiliateplus/account_navigation" after="addbootstrap" name="account_navigator" template="affiliateplus/navigation.phtml">
                 <action method="setNavigationTitle">
