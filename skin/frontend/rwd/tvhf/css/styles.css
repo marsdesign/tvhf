@@ -14772,4 +14772,30 @@ li.wide input#affiliate-page-link{
 .affiliateplus-account-edit form .legend{
   border:none;
 }
+.affiliateplus-account-edit form input.checkbox{
+  display:inline-block;
+}
 
+.affiliateplus-account-login .account-login .row{
+  overflow:hidden;
+  clear:both;
+}
+.affiliateplus-account-login .account-login .row > div{
+  width:50%;
+  float:left;
+  padding:10px;
+}
+.affiliate-page .form-control, .affiliate-page .form-control{
+  display:block;
+  width:100%;
+  margin-bottom:15px;
+}
+
+.affiliateplus-account-bottom > div{
+  margin-right:10px;
+  float:left;
+}
+
+.affiliate-page .main{
+  padding-bottom:50px;
+}
