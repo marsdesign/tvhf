@@ -80,4 +80,18 @@ $mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : ''
 /* Run store or run website */
 $mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
 
+
+/* code needed to make cloudflare https work */
+foreach (array(
+    'SERVER_PORT' => 443,
+    'HTTP_X_FORWARDED_PROTO' => 'https',
+    'HTTP_CF_VISITOR' => '{"scheme":"https"}'
+) as $key => $value) {
+    if (isset($_SERVER[$key]) && $_SERVER[$key] == $value) {
+        $_SERVER['HTTPS'] = 'on';
+        break;
+    }
+}
+/* end cloudflare */
+
 Mage::run($mageRunCode, $mageRunType);

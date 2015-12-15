@@ -13213,7 +13213,7 @@ div.product-info{
   text-align:center;
 }
 .cart-table h2{
-  text-transform:none;
+  margin-bottom:7px;
 }
 .products-grid .price-box .price{
   font-size:12px;
@@ -13431,9 +13431,6 @@ label.required::after, span.required::after {
   float:left;
 }
 .cart-table .product-cart-sku {
-  display:none;
-}
-.cart-table .item-options{
   display:none;
 }
 #shopping-cart-table a.btn-remove.btn-remove2{
