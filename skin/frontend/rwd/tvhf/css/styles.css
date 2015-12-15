@@ -1173,6 +1173,7 @@ a.button:hover {
  * Breadcrumbs
  */
 .breadcrumbs {
+  display:none;
   overflow: hidden;
   margin: -15px 0 31px;
 }
