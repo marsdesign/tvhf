@@ -19,10 +19,10 @@
                             </config>
                         </children>
                     </system>
-                    <affiliatepluslevel>
+                    <Magestore_affiliatepluslevel>
                         <title>Affiliate Plus Module</title>
                         <sort_order>10</sort_order>
-                    </affiliatepluslevel>
+                    </Magestore_affiliatepluslevel>
                 </children>
             </admin>
         </resources>
