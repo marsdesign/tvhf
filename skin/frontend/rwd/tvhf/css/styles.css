@@ -12830,14 +12830,16 @@ a.aw-blog-read-more:after{
 .postTitle h3 {
   color:#808282;
 }
-.postContent img:first-child{
-  display:none;
+.postContent img{
+  max-width:100%;
+  height:auto;
+  border:1px solid #ececec;
 }
 .blog-image{
   margin:0 0 40px 0;
 }
 .blog-image img{
-  border:1px solid #ccc;
+  border:1px solid #ececec;
   width:100%;
   height:auto;
 }
@@ -13061,9 +13063,11 @@ h1, .h1 {
 }
 
 /* Category Page Theme */
+/*
 .catalog-category-view .main-container{
   padding-top:0px;
 }
+*/
 .catalog-category-view .toolbar{
     line-height: 12px;
     margin-top: 0px;
@@ -14573,20 +14577,23 @@ h3.ssi-title{
   color: #414042!important;
 }
 
-.affiliate-page .col-main{
-  padding-left:230px;
+@media(min-width:768px){
+  .affiliate-page .col-main{
+    padding-left:230px;
+  }
+  .affiliate-page .affiliate-navigation{
+    float:left;
+    width:200px;
+    margin-left:-230px;
+  }
+  .affiliate-page .aff-main-content{
+    float:right;
+    width:100%;
+  }
 }
-.affiliate-page .affiliate-navigation{
-  float:left;
-  width:200px;
-  margin-left:-230px;
-}
+
 .affiliate-page .affiliate-navigation .block-title-aff{
   display:none;
-}
-.affiliate-page .aff-main-content{
-  float:right;
-  width:100%;
 }
 .affiliate-page p{
   margin-bottom:20px;
@@ -14791,4 +14798,24 @@ li.wide input#affiliate-page-link{
 
 .affiliate-page .main{
   padding-bottom:50px;
+}
+.affiliate-page .buttons-set button.button{
+  float:left;
+}
+.affiliate-page  .buttons-set a:not(.button){
+  padding:0;
+}
+
+@media(min-width:480px){
+  .affiliateplus-account-register .form-group{
+    clear:both;
+    overflow:hidden;
+    margin-left:-10px;
+    margin-right:-10px;
+  }
+  .affiliateplus-account-register .form-group .col-lg-6{
+    float:left;
+    width:50%;
+    padding:0 10px;
+  }
 }

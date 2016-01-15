@@ -232,3 +232,53 @@
         Deny from all
 
     </Files>
+
+
+<IfModule mod_rewrite.c>
+
+############################################
+## 301 redirects to catch old urls
+
+## http://www.thevirginhairfantasy.com/closures-frontals/laceclosure.html  
+## http://www.thevirginhairfantasy.com/wigs/peruca-complete-chic-bob.html
+## http://www.thevirginhairfantasy.com/wigs/peruca-complete-effortless-bob.html
+## http://www.thevirginhairfantasy.com/peruca-create-your-own.html
+
+
+Redirect 301 /vhf-tv/the-virgin-hair-fantasy-launches-the-peruca-collection http://www.thevirginhairfantasy.com/blog
+Redirect 301 /shop/brazilian-virgin-body-wave http://www.thevirginhairfantasy.com/wigs/peruca-complete-brazilian-body-wave-28.html
+
+## general
+Redirect 301    /about.html http://www.thevirginhairfantasy.com/about
+Redirect 301    /contact.html http://www.thevirginhairfantasy.com/contact
+Redirect 301    /returns.html http://www.thevirginhairfantasy.com/returns
+Redirect 301    /shipping.html http://www.thevirginhairfantasy.com/shipping
+Redirect 301    /terms.html http://www.thevirginhairfantasy.com/terms
+Redirect 301    /privacy.html http://www.thevirginhairfantasy.com/privacy
+Redirect 301    /faq.html http://www.thevirginhairfantasy.com/faq
+Redirect 301    /girls.html http://www.thevirginhairfantasy.com/tvhf-dolls
+Redirect 301    /tv.html http://www.thevirginhairfantasy.com/tvhf-tube
+
+## clipins, closures, frontals
+Redirect 301    /shop/clip-ins-closures/frontal http://www.thevirginhairfantasy.com/closures-frontals/frontal.html   
+Redirect 301    /shop/clip-ins-closures/silk-base-custom-closure http://www.thevirginhairfantasy.com/closures-frontals/silk-base-custom-closure.html
+
+## wefts
+Redirect 301    /shop/wefts/brazilian-virgin-body-wave http://www.thevirginhairfantasy.com/wefts/brazilian-virgin-body-wave.html
+Redirect 301    /shop/wefts/brazilian-virgin-curly http://www.thevirginhairfantasy.com/wefts/brazilian-virgin-curly.html
+Redirect 301    /shop/wefts/lolita http://www.thevirginhairfantasy.com/wefts/lolita.html
+Redirect 301    /shop/wefts/plush-geisha http://www.thevirginhairfantasy.com/wefts/plush-geisha.html
+      
+## wigs
+Redirect 301    /shop/wigs/peruca-wavy  http://www.thevirginhairfantasy.com/wigs/peruca-complete-brazilian-body-wave-28.html
+Redirect 301    /shop/wigs/body-wave-full-lace-u-part-wig   http://www.thevirginhairfantasy.com/wigs/peruca-plush-geisha-upart-and-full-wigs.html
+Redirect 301    /shop/wigs/body-wave-full-lace-u-part-wig-1 http://www.thevirginhairfantasy.com/wigs/peruca-bodywave-upart-and-full-wigs.html
+Redirect 301    /shop/wigs/peruca-wavy  http://www.thevirginhairfantasy.com/wigs/peruca-complete-brazilian-bodywave.html
+
+## shop - need to go last or will mess up
+Redirect 301    /shop-main http://www.thevirginhairfantasy.com/shop
+Redirect 301    /shop/wigs http://www.thevirginhairfantasy.com/wigs.html
+Redirect 301    /shop/clip-ins-closures http://www.thevirginhairfantasy.com/closures-frontals.html 
+Redirect 301    /shop/wefts http://www.thevirginhairfantasy.com/wefts.html
+Redirect 301    /shop/haircare http://www.thevirginhairfantasy.com/haircare.html
+</IfModule>
