@@ -19,4 +19,3 @@ class Magestore_Affiliateplus_Model_Tracking extends Mage_Core_Model_Abstract
         return Mage::helper('affiliateplus/config');
     }
 }
- 

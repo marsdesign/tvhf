@@ -26,13 +26,9 @@ class Magestore_Affiliateplusstatistic_Block_Frontend_Report_Sales_Grid extends 
         ));
 
         if ($fromDate = $this->getRequest()->getParam('date_from'))
-            // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
-            $collection->getSelect()->where("date(created_time)", array('from' => $this->formatData($fromDate)));
-//            $collection->addFieldToFilter('date(created_time)', array('from' => $this->formatData($fromDate)));
+            $collection->addFieldToFilter('date(created_time)', array('from' => $this->formatData($fromDate)));
         if ($toDate = $this->getRequest()->getParam('date_to'))
-            // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
-            $collection->getSelect()->where("date(created_time)", array('to' => $this->formatData($toDate)));
-//            $collection->addFieldToFilter('date(created_time)', array('to' => $this->formatData($toDate)));
+            $collection->addFieldToFilter('date(created_time)', array('to' => $this->formatData($toDate)));
         
         
         if ($status_list = $this->getRequest()->getParam('status')){

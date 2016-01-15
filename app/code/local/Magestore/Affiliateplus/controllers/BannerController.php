@@ -72,8 +72,7 @@ class Magestore_Affiliateplus_BannerController extends Mage_Core_Controller_Fron
         $date = date('Y-m-d');
         if(!Mage::helper('affiliateplus')->isRobots()){
                 if(($account->getStatus()==1) && ($account->getCustomerId()!= $customer->getId())){
-                    // Changed By Adam: fix loi ko tim thay HTTP_REFERER
-                    $domain = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+                    $domain = $_SERVER['HTTP_REFERER'];
                     $actionModel = Mage::getModel('affiliateplus/action')->loadExist($account_id,$banner_id,1,$store_id,$date,$ipAddress,$domain);
                     //if(!$this->detectCookie()){}
                     if(!$actionModel->getId()){
@@ -90,7 +89,7 @@ class Magestore_Affiliateplus_BannerController extends Mage_Core_Controller_Fron
                         $actionModel->setData('ip_address',$ipAddress);
                         $actionModel->setData('store_id',$store_id);
                         $actionModel->setData('created_date',date("Y-m-d"));
-                        $actionModel->setData('domain',$domain);
+                        $actionModel->setData('domain',$_SERVER['HTTP_REFERER']);
                         if ($domain = $actionModel->getDomain()) {
                             $actionModel->setReferer($this->refineDomain($domain));
                         }

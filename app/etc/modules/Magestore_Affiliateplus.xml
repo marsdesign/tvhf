@@ -4,12 +4,6 @@
         <Magestore_Affiliateplus>
             <active>true</active>
             <codePool>local</codePool>
-            <erp>
-                <isERPmodule>true</isERPmodule>
-                <alias_name>Affiliate Plus</alias_name>
-                <icon>affiliateplus</icon>
-                <default_page>adminhtml/affiliateplusstatistic_index</default_page>
-            </erp>              
         </Magestore_Affiliateplus>
     </modules>
 </config> 

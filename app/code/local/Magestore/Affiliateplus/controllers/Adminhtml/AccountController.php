@@ -240,11 +240,10 @@ class Magestore_Affiliateplus_Adminhtml_AccountController extends Mage_Adminhtml
         if (!Mage::helper('magenotification')->checkLicenseKeyAdminController($this)) {
             return;
         }
-        // Changed By Adam 23/04/2015
-        $storeId = $this->getRequest()->getParam('store');
         if ($data = $this->getRequest()->getPost()) {
             $accountId = $this->getRequest()->getParam('id');
-            
+            $storeId = $this->getRequest()->getParam('store');
+
             $customer = Mage::getModel('customer/customer')->load($data['customer_id']);
 
             $email = isset($data['email']) ? $data['email'] : '';
@@ -347,8 +346,7 @@ class Magestore_Affiliateplus_Adminhtml_AccountController extends Mage_Adminhtml
                     }
                 } else {
                     //send mail to new account
-                    // Adam 01/07/2015: Fix issue of the affiliate's link in email is wrong when create account from back-end
-                    $account->sendMailToNewAccount($account->getIdentifyCode());
+                    $account->sendMailToNewAccount();
                 }
 
                 //add event after save
@@ -494,16 +492,6 @@ class Magestore_Affiliateplus_Adminhtml_AccountController extends Mage_Adminhtml
         $response->setBody($content);
         $response->sendResponse();
         die;
-    }
-    
-    /**
-     * Check for is allowed
-     *
-     * @return boolean
-     */
-    protected function _isAllowed()
-    {
-        return Mage::getSingleton('admin/session')->isAllowed('affiliateplus/account');
     }
 
 }

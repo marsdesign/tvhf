@@ -570,15 +570,5 @@ class Magestore_Affiliateplus_Adminhtml_PaymentController extends Mage_Adminhtml
         $this->_initAction()
                 ->renderLayout();
     }
-    
-    /**
-     * Check for is allowed
-     *
-     * @return boolean
-     */
-    protected function _isAllowed()
-    {
-        return Mage::getSingleton('admin/session')->isAllowed('affiliateplus/payment');
-    }
 
 }

@@ -10,9 +10,6 @@ class Magestore_Affiliateplus_Block_Referrer extends Mage_Core_Block_Template
 		return Mage::helper('affiliateplus/config');
 	}
 	
-        /**
-         * 
-         */
 	protected function _construct(){
 		parent::_construct();
 		$account = Mage::getSingleton('affiliateplus/session')->getAccount();
@@ -46,10 +43,6 @@ class Magestore_Affiliateplus_Block_Referrer extends Mage_Core_Block_Template
 		$this->setCollection($collection);
 	}
 	
-        /**
-         * 
-         * @return \Magestore_Affiliateplus_Block_Referrer
-         */
 	public function _prepareLayout(){
 		parent::_prepareLayout();
 		$pager = $this->getLayout()->createBlock('page/html_pager','referer_pager')
@@ -120,39 +113,20 @@ class Magestore_Affiliateplus_Block_Referrer extends Mage_Core_Block_Template
 		return $this;
     }
     
-    /**
-     * 
-     * @param type $row
-     * @return type
-     */
     public function getNoNumber($row){
     	return sprintf('#%d',$row->getId());
     }
     
-    /**
-     * 
-     * @param type $row
-     * @return type
-     */
     public function getReferer($row){
     	if ($row->getReferer())
     		return sprintf('<a target="_blank" href="http://%s">%s</a>',$row->getReferer(),$row->getReferer());
     	return $this->__('N/A');
     }
     
-    /**
-     * 
-     * @param type $row
-     * @return type
-     */
     public function getUrlPath($row){
     	return sprintf('<a href="%s">%s</a>',Mage::getBaseUrl().trim($row->getLandingPage(),'/'),$row->getLandingPage());
     }
     
-    /**
-     * 
-     * @return type
-     */
     public function getStoresOption(){
     	$stores = array();
     	foreach (Mage::app()->getStores() as $id => $store)
@@ -164,35 +138,19 @@ class Magestore_Affiliateplus_Block_Referrer extends Mage_Core_Block_Template
     	return $stores;
     }
     
-    /**
-     * 
-     * @return type
-     */
     public function getPagerHtml(){
     	return $this->getChildHtml('referer_pager');
     }
     
-    /**
-     * 
-     * @return type
-     */
     public function getGridHtml(){
     	return $this->getChildHtml('referer_grid');
     }
     
-    /**
-     * 
-     * @return type
-     */
     protected function _toHtml(){
     	$this->getChild('referer_grid')->setCollection($this->getCollection());
     	return parent::_toHtml();
     }
     
-    /**
-     * 
-     * @return type
-     */
     public function getTraffics()
     {
         $commissionInfo = $this->getCommissionInfo();
@@ -202,10 +160,7 @@ class Magestore_Affiliateplus_Block_Referrer extends Mage_Core_Block_Template
         $data[] = $commissionInfo;
         return $data;
     }
-    /**
-     * 
-     * @return string
-     */
+    
     public function getCommissionInfo(){
         $info = array();
         $session = Mage::getSingleton('affiliateplus/session');
@@ -217,44 +172,40 @@ class Magestore_Affiliateplus_Block_Referrer extends Mage_Core_Block_Template
             $account = $session->getAccount();
             $dateCollection = Mage::getModel('affiliateplus/transaction')->getCollection()
                             ->addFieldToFilter('account_id',$account->getId())
-//                            ->addFieldToFilter('date(created_time)',$date)            // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+                            ->addFieldToFilter('date(created_time)',$date)
                     ;
             $dateCollection ->getSelect()
-                            ->where("date(created_time)=?", $date)                      // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
-                            ->group("date(created_time)")                               // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+                            ->group('date(created_time)')
                             ->columns(array('commission_total'=>'SUM(commission)'));
             $first = $dateCollection->getFirstItem();
             $info['today'] = Mage::helper('core')->currency($first->getCommissionTotal());
             /*----------------------------------------------------------------*/
             $weekCollection = Mage::getModel('affiliateplus/transaction')->getCollection()
                             ->addFieldToFilter('account_id',$account->getId())
-//                            ->addFieldToFilter('week(created_time, 1)',$week)         // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+                            ->addFieldToFilter('week(created_time, 1)',$week)
                     ;
             $weekCollection ->getSelect()
-                            ->where("week(created_time, 1)=?", $week)                   // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
-                            ->group("week(created_time, 1)")                            // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+                            ->group('week(created_time, 1)')
                             ->columns(array('commission_total'=>'SUM(commission)'));
             $first = $weekCollection->getFirstItem();
             $info['week'] = Mage::helper('core')->currency($first->getCommissionTotal());
             /*----------------------------------------------------------------*/
             $monthCollection = Mage::getModel('affiliateplus/transaction')->getCollection()
                             ->addFieldToFilter('account_id',$account->getId())
-//                            ->addFieldToFilter('month(created_time)',$month)          // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+                            ->addFieldToFilter('month(created_time)',$month)
                     ;
             $monthCollection ->getSelect()
-                            ->where("month(created_time)=?", $month)                    // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
-                            ->group("month(created_time)")                              // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+                            ->group('month(created_time)')
                             ->columns(array('commission_total'=>'SUM(commission)'));
             $first = $monthCollection->getFirstItem();
             $info['month'] = Mage::helper('core')->currency($first->getCommissionTotal());
             /*----------------------------------------------------------------*/
             $yearCollection = Mage::getModel('affiliateplus/transaction')->getCollection()
                             ->addFieldToFilter('account_id',$account->getId())
-//                            ->addFieldToFilter('year(created_time)',$year)            // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+                            ->addFieldToFilter('year(created_time)',$year)
                     ;
             $yearCollection ->getSelect()
-                            ->where("year(created_time)=?", $year)                      // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
-                            ->group("year(created_time)")                               // Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+                            ->group('year(created_time)')
                             ->columns(array('commission_total'=>'SUM(commission)'));
             $first = $yearCollection->getFirstItem();
             $info['year'] = Mage::helper('core')->currency($first->getCommissionTotal());

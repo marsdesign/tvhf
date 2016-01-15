@@ -458,13 +458,4 @@ class Magestore_Affiliateplusprogram_Adminhtml_ProgramController extends Mage_Ad
         $this->renderLayout();
     }
 
-    /**
-     * Check for is allowed
-     *
-     * @return boolean
-     */
-    protected function _isAllowed() {
-        return Mage::getSingleton('admin/session')->isAllowed('affiliateplus/program');
-    }
-
 }

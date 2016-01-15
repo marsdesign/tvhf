@@ -3,7 +3,7 @@
     <modules>
         <Magestore_Affiliatepluscoupon>
             <!--Changed By Adam 04/11/2014: accepted by Blanka-->
-            <version>0.4.3</version>
+            <version>0.4.2</version>
         </Magestore_Affiliatepluscoupon>
     </modules>
     <frontend>
@@ -91,8 +91,7 @@
         </events>
     </frontend>
     <admin>
-<!--        Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2-->        
-<!--        <routers>
+        <routers>
             <affiliatepluscouponadmin>
                 <use>admin</use>
                 <args>
@@ -100,16 +99,7 @@
                     <frontName>affiliatepluscouponadmin</frontName>
                 </args>
             </affiliatepluscouponadmin>
-        </routers>-->
-        <routers>
-            <adminhtml> 
-                <args> 
-                    <modules> 
-                        <Magestore_Affiliatepluscoupon after="Mage_Adminhtml">Magestore_Affiliatepluscoupon_Adminhtml</Magestore_Affiliatepluscoupon>
-                    </modules> 
-                </args> 
-            </adminhtml>
-        </routers> 
+        </routers>
     </admin>
     <adminhtml>
         <layout>

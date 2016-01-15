@@ -29,10 +29,10 @@ class Magestore_Affiliatepluscoupon_Block_Adminhtml_Transaction_Grid extends Mag
 			'index'     => 'transaction_id',
 		));
 		
-		$this->addColumn('account_email', array(
+		$this->addColumn('account_name', array(
 			'header'    => Mage::helper('affiliateplus')->__('Affiliate Email'),
 			'width'     => '150px',
-			'index'     => 'account_email',
+			'index'     => 'account_name',
 			'renderer'  => 'affiliateplus/adminhtml_transaction_renderer_account',
 		));
 		
@@ -156,7 +156,7 @@ class Magestore_Affiliatepluscoupon_Block_Adminhtml_Transaction_Grid extends Mag
 	
 	
 	public function getRowUrl($row){
-            return $this->getUrl('adminhtml/affiliateplus_transaction/view', array('id' => $row->getId()));            //Changed By Adam 29/10/2015: Fix issue of SUPEE 6788 - in Magento 1.9.2.2
+		return $this->getUrl('affiliateplusadmin/*/view', array('id' => $row->getId()));
 	}
 	
 	public function getGridUrl(){
