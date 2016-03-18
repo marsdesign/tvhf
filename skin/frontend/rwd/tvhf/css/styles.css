@@ -11727,6 +11727,12 @@ select {
 .product-video .video-link:hover{
     background-color:rgba(0,0,0,.4);
 }
+.product-video .video-link.video-transparent{
+  background:transparent;
+}
+.product-video .video-link.video-transparent:hover{
+    background:transparent;
+}
 .video-play{
   width:80px;
   height:80px;

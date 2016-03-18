@@ -230,6 +230,8 @@ $supported_image = array(
 );
 $ext = strtolower(pathinfo($_videoThumb, PATHINFO_EXTENSION)); 
 if (in_array($ext, $supported_image)) {
+    $_videoPlay = '<div class="video-play"></div>';
+    $_videoClass = 'video-link';
     try{
         $_videoImg= $this->helper('catalog/image')->init($_product, 'video_thumbnail')
         ->constrainOnly(true)
@@ -237,8 +239,14 @@ if (in_array($ext, $supported_image)) {
         ->keepFrame(false)
         ->resize(400, null);
     }catch(Exception $e){
-        $_videoImg = '';
+        $_videoImg = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg' . DS . 'tvhf-video.png';
+        $_VideoPlay = '';
+        $_videoClass = 'video-link video-transparent';
     }
+}else{
+    $_videoImg = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'wysiwyg' . DS . 'tvhf-video.png';
+    $_videoPlay = '';
+    $_videoClass = 'video-link video-transparent';
 }
 ?>
     <div class="product-description">
@@ -252,8 +260,8 @@ if (in_array($ext, $supported_image)) {
             <?php if(!empty($_videoId)){ ?>
             <div class="video-container">
                 <div class="product-video">
-                    <a class="video-link" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">
-                        <div class="video-play"></div>
+                    <a class="<?php echo $_videoClass;?>" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">
+                        <?php echo $_videoPlay;?>
                     </a>
                     <img src="<?php echo $_videoImg;?>" alt="<?php echo $_title;?>">
                 </div>
