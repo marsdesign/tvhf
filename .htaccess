@@ -229,7 +229,7 @@
 ############################################
 
         Order allow,deny
-        Allow from all
+        Deny from all
 
     </Files>
 
