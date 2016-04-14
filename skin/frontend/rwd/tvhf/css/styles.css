@@ -5717,7 +5717,7 @@ p.product-name a:hover {
 }
 
 .product-options ul.options-list {
-  margin-right: 5px;
+  margin: 12px;
 }
 
 .product-options ul.options-list li {
@@ -13358,7 +13358,7 @@ label.required::after, span.required::after {
 .product-options dl.last dd.last .input-box label{
   padding: 6px 10px 6px 22px;
 }
-.product-view .product-options dd .input-box::after {
+.product-view .product-options dd .input-select::after {
     content: "";
     width: 35px;
     height: 28px;
