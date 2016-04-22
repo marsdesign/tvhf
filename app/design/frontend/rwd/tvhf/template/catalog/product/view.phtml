@@ -263,7 +263,7 @@ if (in_array($ext, $supported_image)) {
                     <a class="<?php echo $_videoClass;?>" data-toggle="modal" data-target="#video-modal" data-video="<?php echo $_videoId;?>">
                         <?php echo $_videoPlay;?>
                     </a>
-                    <img src="<?php echo $_videoImg;?>" alt="<?php echo $_title;?>">
+                    <img src="<?php echo $_videoImg;?>" alt="<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>">
                 </div>
             </div>
             <?php } ?>
