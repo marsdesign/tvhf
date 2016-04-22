@@ -36,7 +36,18 @@
     </div>
 </div>
 <div class="postWrapper">
-    <div class="blog-image"><?php preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $result); echo is_array($result[0])?$result[0][0]:'' ; ?></div>
+    <div class="blog-image">
+        <?php
+        // get first image from shortcontent 
+        preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $_blogImages); 
+        if(is_array($_blogImages)){
+            if(count($_blogImages[0])){
+                $_blogImage = $_blogImages[0][0];
+                echo $_blogImage;
+            }
+        }
+        ?>
+    </div>
     <div class="postTitle">
         <h2><?php echo $post->getTitle(); ?></h2>
         <h3><?php echo date('l, F j, Y',strtotime($post->getCreatedTime())); ?></h3>

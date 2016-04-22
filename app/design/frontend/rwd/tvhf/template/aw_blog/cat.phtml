@@ -32,10 +32,12 @@
  <?php echo $this->getChildHtml('aw_blog_comments_toolbar'); ?>
     <?php foreach ($posts as $post): ?>
     <?php
-        // get first image from shortcontent 
+    // get first image from shortcontent 
     preg_match_all('/<img[^>]+>/i',$post->getShortContent(), $_blogImages); 
     if(is_array($_blogImages)){
-        $_blogImage = $_blogImages[0][0];
+        if(count($_blogImages[0])){
+            $_blogImage = $_blogImages[0][0];
+        }
     }
     ?>
         <div class="postWrapper">
