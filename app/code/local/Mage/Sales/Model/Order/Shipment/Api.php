@@ -159,8 +159,7 @@ class Mage_Sales_Model_Order_Shipment_Api extends Mage_Sales_Model_Api_Resource
                     ->addObject($shipment)
                     ->addObject($shipment->getOrder())
                     ->save();
-                //$shipment->sendEmail($email, ($includeComment ? $comment : ''));
-                // removing this because sending in track
+                $shipment->sendEmail($email, ($includeComment ? $comment : ''));
             } catch (Mage_Core_Exception $e) {
                 $this->_fault('data_invalid', $e->getMessage());
             }
