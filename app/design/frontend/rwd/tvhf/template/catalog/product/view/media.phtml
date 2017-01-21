@@ -58,28 +58,74 @@
     </div>
 </div>
 
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+    <ul class="product-image-thumbs">
+    <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
+        <?php if ($this->isGalleryImageVisible($_image)): ?>
+        <li>
+            <a class="thumb-link" href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>" data-image-index="<?php echo $i; ?>">
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(75); ?>"
+                     width="75" height="75" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
+            </a>
+        </li>
+        <?php endif; ?>
+    <?php $i++; endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
+
 <?php echo $this->getChildHtml('after'); ?>
+
+
+<style>
+.product-image-thumbs li {
+    display: inline-block;
+    width: 20%;
+    float: left;
+}
+</style>
 
 <?php if($this->getGalleryImages()->getSize() > 1){ ?>
 <script type="text/javascript">
-    $j(".product-image-slideshow").owlCarousel({
-        pagination: false,
-        navigation: true,
-        singleItem: true,
-        slideSpeed:300,
-        rewindNav: true,
-        lazyLoad: true,
-        navigationText : ["",""],
-        addClassActive: true
+    // $j(".product-image-slideshow").owlCarousel({
+    //     pagination: false,
+    //     navigation: true,
+    //     singleItem: true,
+    //     slideSpeed:300,
+    //     rewindNav: true,
+    //     lazyLoad: true,
+    //     navigationText : ["",""],
+    //     addClassActive: true
 
-    });
+    // });
+
+     $j(document).ready(function(){
+
+         $j('.product-image-slideshow').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            asNavFor: '.product-image-thumbs',
+            adaptiveHeight: true
+        });
+        $j('.product-image-thumbs').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            asNavFor: '.product-image-slideshow',
+            dots: false,
+            focusOnSelect: true
+        });
+
+     });
+
+
 </script>
 <?php } ?>
 <script type="text/javascript">
 
     $j('.zoom-toggle,.product-image-slideshow img,#zoom-window').on('click', function(){
         if(isZoomed() === false){
-            var image = $j('.active .zoom-image').data("image");
+            var image = $j('.slick-active .zoom-image').data("image");
             zoom(image);
         }else{
             unZoom();

@@ -5162,7 +5162,7 @@ p.product-name a:hover {
 .product-image-gallery.loading:before, .product-image-gallery.loading:after {
   display: block;
 }
-
+/*
 .product-image-thumbs li {
   display: inline-block;
 }
@@ -5176,7 +5176,7 @@ p.product-name a:hover {
 
 .no-touch .product-image-thumbs a:hover {
   border-color: #c7c7c7;
-}
+}*/
 
 .product-view .product-shop,
 .product-view .block-related,
@@ -12785,7 +12785,7 @@ A.awblog_current_comment {
   margin-right:20px;
 }
 .postWrapper .social-share-wrap{
-  display:float:left;
+  float:left;
 }
 
 /*BLOG*/
@@ -12937,6 +12937,9 @@ a.aw-blog-read-more:after{
 /* ============================================ *
  * Social Share
  * ============================================ */
+.social-share-wrap{
+  margin-top:20px;
+}
 #social-share{
   display:inline-block;
 }
@@ -14419,7 +14422,8 @@ h3.ssi-title{
 .zoomed .box-up-sell,
 .zoomed .product-image-slideshow,
 .zoomed .product-glam-image,
-.zoomed .zoom-open{
+.zoomed .zoom-open,
+.zoomed .more-views{
  display:none!important;
 }
 
