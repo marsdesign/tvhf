@@ -1397,5 +1397,5 @@ var ProductMediaManager = {
 };
 
 $j(document).ready(function() {
-    ProductMediaManager.init();
+    //ProductMediaManager.init();
 });

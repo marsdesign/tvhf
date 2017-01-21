@@ -59,7 +59,7 @@
 </div>
 
 <?php if (count($this->getGalleryImages()) > 0): ?>
-<div class="more-views-wrap">
+<div class="more-views">
     <ul class="product-image-thumbs">
     <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
         <?php if ($this->isGalleryImageVisible($_image)): ?>
@@ -123,15 +123,19 @@
 <?php } ?>
 <script type="text/javascript">
 
-    $j('.zoom-toggle,.product-image-slideshow img,#zoom-window').on('click', function(){
-        if(isZoomed() === false){
-            var image = $j('.slick-active .zoom-image').data("image");
-            zoom(image);
-        }else{
-            unZoom();
-        }
 
-    })
+    if( Modernizr.mq("screen and (min-width: 768px)")){
+
+        $j('.zoom-toggle,.product-image-slideshow img,#zoom-window').on('click', function(){
+            if(isZoomed() === false){
+                var image = $j('.slick-active .zoom-image').data("image");
+                zoom(image);
+            }else{
+                unZoom();
+            }
+
+        })
+    }
     function isZoomed(){
         var zoomedDiv = $j('.product-view');
         if(zoomedDiv.hasClass('zoomed')){
