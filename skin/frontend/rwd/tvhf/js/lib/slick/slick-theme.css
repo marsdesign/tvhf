@@ -16,17 +16,6 @@
     src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
 }
 
-
-.more-views{
-    width:400px;
-}
-.product-image-thumbs img{
-    border:solid 1px #ececec;
-}
-.product-image-thumbs .slick-current img{
-    border:solid 1px #c7c7c7;
-}
-
 /* Arrows */
 .slick-prev,
 .slick-next
