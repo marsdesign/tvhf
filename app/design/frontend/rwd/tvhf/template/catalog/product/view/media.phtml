@@ -144,41 +144,43 @@
 <script type="text/javascript">
 
 
-    if( Modernizr.mq("screen and (min-width: 768px)")){
+if( Modernizr.mq("screen and (min-width: 768px)")){
 
-        $j('.zoom-toggle,.product-image-slideshow img,#zoom-window').on('click', function(){
-            if(isZoomed() === false){
+    $j('.zoom-toggle,.product-image-slideshow img,#zoom-window').on('click', function(){
+        if(isZoomed() === false){
 
-                var isSlick = document.getElementsByClassName('.slick-active');
-                if (isSlick.length > 0) {
-                    var image = $j('.product-image-slideshow .zoom-image').data("image");    
-                }else{
-                    var image = $j('.product-image-slideshow .slick-active .zoom-image').data("image");    
-                }
-                zoom(image);
+            var slideCount = $j('.product-image-slideshow').children().length;
+            if (slideCount > 1) {
+                var image = $j('.product-image-slideshow .slick-active .zoom-image').data("image");    
             }else{
-                unZoom();
+                var image = $j('.product-image-slideshow .zoom-image').data("image");   
             }
-
-        })
-    }
-    function isZoomed(){
-        var zoomedDiv = $j('.product-view');
-        if(zoomedDiv.hasClass('zoomed')){
-            return true;
+            zoom(image);
         }else{
-            return false;
+            unZoom();
         }
+
+    })
+}   
+
+
+function isZoomed(){
+    var zoomedDiv = $j('.product-view');
+    if(zoomedDiv.hasClass('zoomed')){
+        return true;
+    }else{
+        return false;
     }
-    function zoom(image){
-        var imageTag = '<img src="' + image + '" />';
-        var zoom = $j('#zoom-window');
-        $j(zoom).append(imageTag);
-        $j('.product-view').addClass('zoomed');
-    }
-    function unZoom(){
-        $j('.product-view').removeClass('zoomed');
-        $j('#zoom-window img').attr('src','');
-        $j('#zoom-window img').remove();  
-    }
+}
+function zoom(image){
+    var imageTag = '<img src="' + image + '" />';
+    var zoom = $j('#zoom-window');
+    $j(zoom).append(imageTag);
+    $j('.product-view').addClass('zoomed');
+}
+function unZoom(){
+    $j('.product-view').removeClass('zoomed');
+    $j('#zoom-window img').attr('src','');
+    $j('#zoom-window img').remove();  
+}
 </script>
