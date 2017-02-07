@@ -148,7 +148,13 @@
 
         $j('.zoom-toggle,.product-image-slideshow img,#zoom-window').on('click', function(){
             if(isZoomed() === false){
-                var image = $j('.product-image-slideshow .slick-active .zoom-image').data("image");
+
+                var isSlick = document.getElementsByClassName('.slick-active');
+                if (isSlick.length > 0) {
+                    var image = $j('.product-image-slideshow .zoom-image').data("image");    
+                }else{
+                    var image = $j('.product-image-slideshow .slick-active .zoom-image').data("image");    
+                }
                 zoom(image);
             }else{
                 unZoom();
