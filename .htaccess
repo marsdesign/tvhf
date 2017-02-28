@@ -248,7 +248,6 @@
 
     </Files>
 
-<IfModule mod_rewrite.c>
 
 ############################################
 ## 301 redirects to catch old urls
@@ -295,4 +294,3 @@ Redirect 301    /shop/wigs http://www.thevirginhairfantasy.com/wigs.html
 Redirect 301    /shop/clip-ins-closures http://www.thevirginhairfantasy.com/closures-frontals.html 
 Redirect 301    /shop/wefts http://www.thevirginhairfantasy.com/wefts.html
 Redirect 301    /shop/haircare http://www.thevirginhairfantasy.com/haircare.html
-</IfModule>

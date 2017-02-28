@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage
- * @copyright  Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -79,18 +79,5 @@ $mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : ''
 
 /* Run store or run website */
 $mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
-
-/* code needed to make cloudflare https work */
-foreach (array(
-    'SERVER_PORT' => 443,
-    'HTTP_X_FORWARDED_PROTO' => 'https',
-    'HTTP_CF_VISITOR' => '{"scheme":"https"}'
-) as $key => $value) {
-    if (isset($_SERVER[$key]) && $_SERVER[$key] == $value) {
-        $_SERVER['HTTPS'] = 'on';
-        break;
-    }
-}
-/* end cloudflare */
 
 Mage::run($mageRunCode, $mageRunType);
