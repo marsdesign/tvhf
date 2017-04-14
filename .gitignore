@@ -28,6 +28,7 @@ Thumbs.db
 /app/etc/local.xml
 /dev
 /errors/local.xml
+/errors/design.xml
 /media
 /test
 /var/*
