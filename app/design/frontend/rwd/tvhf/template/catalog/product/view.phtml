@@ -302,6 +302,8 @@ if (in_array($ext, $supported_image)) {
 <script>
 // <![CDATA[
 
+
+$j( document ).ready(function() {
     // set iframe url on click
     $j('.video-link').on('click', function(){
         var url     = 'https://player.vimeo.com/video/',
@@ -315,9 +317,14 @@ if (in_array($ext, $supported_image)) {
     $j('#video-modal').on('hide.bs.modal', function (e) {
         $j('#video-modal').find('iframe').attr('src', '');
     })
-	$j(".product-view .product-options dd .input-box").mouseenter(function(){
-		$j(this).find("select").trigger("click");
-	});
+
+    // show video button from modal popup
+    $j("#video-modal-trigger").click(function(){
+        $j("#modal-measure-close").trigger("click");
+        $j('.video-link').trigger('click');
+    });
+
+});
 
 
 // ]]>

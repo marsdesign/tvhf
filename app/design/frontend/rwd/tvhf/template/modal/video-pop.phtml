@@ -1,0 +1,22 @@
+<div class="modal fade" id="modal-measure">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button class="close" id="modal-measure-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <div class="modal-body">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('modal_measure')->toHtml() ?>
+        <!-- <button type="button" class="button-hollow" id="video-modal-trigger" aria-hidden="true">watch video</button> -->
+      </div>
+    </div> 
+  </div> 
+</div>
+
+<script>
+
+$j( document ).ready(function() {
+  setTimeout(function() {
+    $j('#modal-measure').modal();
+  }, 1000);
+
+});
+
+</script>
