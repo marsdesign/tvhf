@@ -37,9 +37,7 @@ function daysBetween(date1, date2) {
 }
 
 function popModal(modalId,bootstrapMode){
-  console.log('pop');
   if(bootstrapMode){
-    console.log(modalId);
     jQuery(modalId).modal('show');
   }else{
     jQuery(modalId).addClass('show');
@@ -55,9 +53,6 @@ function hideModal(modalId,bootstrapMode){
 }
 
 function showModal(mode,delay,modalId,cookieName,bootstrapMode){
-
-
-console.log(modalId);
 
   if(mode == 'scroll'){
     modalShown = 0;
