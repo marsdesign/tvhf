@@ -61,20 +61,14 @@
                 <action method="addItem"><type>skin_js</type><name>js/lib/matchMedia.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/matchMedia.addListener.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/enquire.js</name></action>
-
                 <action method="addItem"><type>skin_js</type><name>js/lib/bootstrap/bootstrap.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/owl.carousel/owl.carousel.min.js</name></action>
-
-
-
                 <action method="addItem"><type>skin_js</type><name>js/lib/slick/slick.min.js</name></action>
-
-
-
-
                 <action method="addItem"><type>skin_js</type><name>js/app.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/lib/imagesloaded.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/minicart.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/modal.js</name></action>
+                
                 <!-- Typekit -->
                 <block type="core/text" name="head.typekit.js">
                     <action method="setText"><text><![CDATA[<script src="//use.typekit.net/ido3rkk.js"></script>]]>&#10;</text></action>

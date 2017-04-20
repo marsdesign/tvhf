@@ -242,6 +242,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <checkout_cart_index>
         <remove name="checkout.cart.shipping" />
+        <remove name="modal_subscribe" />
     </checkout_cart_index>
+
+    <checkout_onepage_index>
+        <remove name="modal_subscribe" />
+    </checkout_onepage_index>
 
 </layout>

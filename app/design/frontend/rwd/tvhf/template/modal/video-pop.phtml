@@ -10,13 +10,14 @@
   </div> 
 </div>
 
-<script>
+<script type="text/javascript">
+//<![CDATA[
 
-$j( document ).ready(function() {
-  setTimeout(function() {
-    $j('#modal-measure').modal();
-  }, 1000);
+    $j( document ).ready(function() {
+      // initModal(mode,delay,modalId,cookieName,interval,bootstrapMode);
+      initModal('delay',1000,'#modal-measure','modalmeasure',1,true);
 
-});
+    });    
 
+//]]>
 </script>

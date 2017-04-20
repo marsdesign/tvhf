@@ -69,7 +69,7 @@
              				onComplete:function(request, json){
              					Element.hide('subscribe-pop-loader');
              					Element.show('subscribe-pop-success');
-             					setTimeout("fadeoutPop()",1000)
+             					setTimeout("hideModal('#modal-subscribe',true)",1000)
              					document.getElementById('newsletter-pop').reset();
              				}, 
              				onLoading:function(request, json){
@@ -82,138 +82,17 @@
 				      elem.value = "Valid email please";
              }
        }
-       
-       function fadeoutPop(){
-       		new Effect.Fade('subscribe-pop-success');
-       		setTimeout(function(){
-       			jQuery("#modal-subscribe").modal('hide');
-       			},2000);
-       }
+        
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
 
+    $j( document ).ready(function() {
+      // initModal(mode,delay,modalId,cookieName,interval,bootstrapMode);
+      initModal('delay',3000,'#modal-subscribe','subpop',30,true);
 
-    /*
-    var sub = readCookie('subscribePop');
-    if(!sub){
-      jQuery(document).ready(function() {
-        setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
-        createCookie('subscribePop',1,3);
-      });
-    }
+    });    
 
-    function createCookie(name,value,days) {
-      if (days) {
-            var date = new Date();
-            date.setTime(date.getTime()+(days*24*60*60*1000));
-            var expires = "; expires="+date.toGMTString();
-      }
-      else var expires = "";
-      document.cookie = name+"="+value+expires+"; path=/";
-    }
-
-    function readCookie(name) {
-      var nameEQ = name + "=";
-      var ca = document.cookie.split(';');
-      for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-      }
-      return null;
-    }
-    */
-
-    function daysBetween(date1, date2) {
-        // The number of milliseconds in one day
-        var ONE_DAY = 1000 * 60 * 60 * 24
-        // Calculate the difference in milliseconds
-        var difference_ms = Math.abs(date1 - date2)
-        // Convert back to days and return
-        return Math.round(difference_ms/ONE_DAY)
-    }
-
-    
-    if (window.location.protocol != "https:") {
-        if (Modernizr.localstorage) {
-            // use local storage to show pop up only once
-            // set today
-            var today = new Date();
-
-            if (localStorage.getItem("subpop") === null) {
-                // if no storage item
-                setTimeout(function() {
-                    jQuery("#modal-subscribe").modal('show');
-                }, 3000);
-                // set storage item today date
-                localStorage.setItem('subpop', today);
-            }else{
-              // we have a storage item - get it
-              var cookie = localStorage.getItem("subpop");
-              // parse into epoch seconds
-              var cookieDate = Date.parse(cookie);
-              // parse today into epoch seconds
-              var todayDate = Date.parse(today);
-              // get the difference in days
-              var days = daysBetween(todayDate,cookieDate);
-              // if greater than = to ten days - redo the process
-              if(days >= 10){
-                setTimeout(function() {
-                    jQuery("#modal-subscribe").modal('show');
-                }, 3000);
-                localStorage.setItem('subpop', today);              
-              }
-            }
-
-        } else {
-            // javascript fallback - not in use.
-            /*
-            var sub = readCookie('subscribePop');
-            if(!sub){
-              jQuery(document).ready(function() {
-                setTimeout(function() {jQuery("#modal-subscribe").modal('show');}, 3000);
-                createCookie('subscribePop',1,3);
-              });
-            }
-            */
-        }
-    }
-  // show modal no matter
-  // jQuery("#modal-subscribe").modal('show');
-
-
-
-
-
-
-
-// Vertical centered modals
-// you can give custom class like this // var modalVerticalCenterClass = ".modal.modal-vcenter";
-
-var modalVerticalCenterClass = ".modal";
-function centerModals(element) {
-    var modals;
-    if (element.length) {
-        modals = element;
-    } else {
-        modals = $j(modalVerticalCenterClass + ':visible');
-    }
-    modals.each( function(i) {
-        var clone = $j(this).clone().css('display', 'block').appendTo('body');
-        var top = Math.round((clone.height() - clone.find('.modal-content').height()) / 2);
-        top = top > 0 ? top : 0;
-        clone.remove();
-        $j(this).find('.modal-content').css("margin-top", top);
-    });
-}
-$j("#modal-subscribe").on('show.bs.modal', function(e) {
-console.log('yo');
-});
-$j(window).on('resize', centerModals);
-
-
-
-
-
-
-       
 //]]>
 </script>
