@@ -1,0 +1,57 @@
+<div class="modal fade" id="modal-video">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button class="close" id="modal-video-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <div class="modal-body">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('modal_video')->toHtml() ?>
+
+        <!-- <button type="button" class="button-hollow" id="video-modal-trigger" aria-hidden="true">watch video</button> -->
+      </div>
+    </div> 
+  </div> 
+</div>
+
+
+<div class="modal fade video-modal" id="modal-video-window" tabindex="-1" role="dialog"s>        
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="modal-video-player">
+                <div class="embed-container"><iframe src="" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+            </div>
+        </div>
+        <a href="#" class="close button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">close</span></a>
+    </div>
+</div>
+
+<script>
+// <![CDATA[
+
+  // set iframe url on click
+  $j('.modal-video-link').on('click', function(){
+      var url   = 'https://player.vimeo.com/video/',
+      modal     = $j(this).data("target"),
+      videoId   = $j(this).data("video"),
+      videoSrc  = url+videoId, 
+      videoUrl  = videoSrc+"?autoplay=1&amp;color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0";
+      $j(modal+' iframe').attr('src', videoUrl); 
+  })
+  // unset url on close
+  $j('#modal-video-window').on('hide.bs.modal', function (e) {
+      $j('#modal-video-window').find('iframe').attr('src', '');
+  })
+
+
+    // close 
+    $j(".modal-video-link").click(function(){
+        $j("#modal-video-close").trigger("click");
+    });
+
+
+    $j( document ).ready(function() {
+        // initModal(mode,delay,modalId,cookieName,interval,bootstrapMode);
+        initModal('delay',3000,'#modal-video','modalvideo',30,true);
+
+    });   
+
+//]]>
+</script>

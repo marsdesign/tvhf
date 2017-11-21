@@ -11765,34 +11765,34 @@ select {
 
 
 /* video modal ==================== */
-#video-modal .modal-dialog{
-  text-align:center;
+.video-modal .modal-dialog{
+  text-align:center!important;
 }
-#video-modal .modal-content{
-  text-align:center;
+.video-modal .modal-content{
+  text-align:center!important;
 }
-#video-modal .modal-body {
-    padding: 0px;
+.video-modal .modal-body {
+    padding: 0px!important;
 }
-#video-modal .close{
-  float:none;
-  position:static;
-  opacity: 1;
-  font-size:11px;
-  margin-top:20px;
+.video-modal .close{
+  float:none!important;
+  position:static!important;
+  opacity: 1!important;
+  font-size:11px!important;
+  margin-top:20px!important;
 }
 @media (min-width: 771px){
-  #video-modal .modal-dialog {
-      max-width: 1200px;
-      width: auto;
-      margin-left:10px;
-      margin-right:10px;
+  .video-modal .modal-dialog {
+      max-width: 1200px!important;
+      width: auto!important;
+      margin-left:10px!important;
+      margin-right:10px!important;
   }
 }
 @media (min-width: 1200px){
-  #video-modal .modal-dialog {
-    margin-left:auto;
-    margin-right:auto;
+  .video-modal .modal-dialog {
+    margin-left:auto!important;
+    margin-right:auto!important;
   }
 }
 

@@ -90,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             -->
         </reference>
 		<reference name="after_body_start">
-            <block type="core/template" name="modal_subscribe" template="modal/subscribe.phtml" after="-"></block>
+            <block type="core/template" name="modal_video" template="modal/video.phtml" after="-"></block>
             <!-- <block type="core/template" name="modal_login" template="modal/login.phtml" after="-"></block> -->
         </reference>    
 	</customer_logged_out>   
@@ -242,11 +242,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <checkout_cart_index>
         <remove name="checkout.cart.shipping" />
-        <remove name="modal_subscribe" />
+        <remove name="modal_video" />
     </checkout_cart_index>
 
     <checkout_onepage_index>
-        <remove name="modal_subscribe" />
+        <remove name="modal_video" />
     </checkout_onepage_index>
 
 </layout>
