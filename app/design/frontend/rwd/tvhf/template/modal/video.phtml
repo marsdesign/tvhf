@@ -23,6 +23,26 @@
     </div>
 </div>
 
+<style>
+@media (min-width: 767px){
+  #modal-video:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -4px;
+  }
+  #modal-video .modal-dialog {
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+  }
+  #modal-video {
+      text-align: center;
+      padding: 0!important;
+  }
+}
+</style>
 <script>
 // <![CDATA[
 
@@ -40,16 +60,16 @@
       $j('#modal-video-window').find('iframe').attr('src', '');
   })
 
-
     // close 
     $j(".modal-video-link").click(function(){
         $j("#modal-video-close").trigger("click");
     });
 
-
     $j( document ).ready(function() {
         // initModal(mode,delay,modalId,cookieName,interval,bootstrapMode);
-        initModal('delay',3000,'#modal-video','modalvideo',30,true);
+        // initModal('delay',3000,'#modal-video','modalvideo',30,true);
+        // popModal('#modal-video',true);
+        showModal('delay',3000,'#modal-video','',true)
 
     });   
 

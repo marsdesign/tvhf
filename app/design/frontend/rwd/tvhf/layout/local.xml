@@ -88,11 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <afterText/>
             </action>
             -->
-        </reference>
-		<reference name="after_body_start">
-            <block type="core/template" name="modal_video" template="modal/video.phtml" after="-"></block>
-            <!-- <block type="core/template" name="modal_login" template="modal/login.phtml" after="-"></block> -->
-        </reference>    
+        </reference>  
 	</customer_logged_out>   
     
     <customer_logged_in>    
@@ -161,6 +157,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </reference>
           </reference>
         <reference name="content">
+        </reference>  
+        <reference name="after_body_start">
+            <block type="core/template" name="modal_video" template="modal/video.phtml" after="-"></block>
+            <!-- <block type="core/template" name="modal_login" template="modal/login.phtml" after="-"></block> -->
         </reference>        
     </cms_index_index>
 
